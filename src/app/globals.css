@@ -17,7 +17,7 @@
 
 body {
 	color: var(--foreground);
-	background: #0366FF;
+	background: #fff;
 	font-family: var(--font-sora);
 }
 
@@ -31,6 +31,8 @@ body {
 	outline: 4px solid transparent;
 	outline-offset: -4px; /* Menarik outline ke dalam */
 	box-shadow: 0 0 0 4px linear-gradient(to right, #3acfd5, #3a4ed5);
+	backdrop-filter: blur(16px)
+
 }
 
 .linear-border::before {
@@ -49,8 +51,40 @@ body {
 }
 
 .bg-linear-primary {
-	background: linear-gradient(90deg, rgba(3, 102, 255, 0) 10.05%, #0366FF 44.95%);
+	/* Mobile default */
+	background: linear-gradient(180deg, rgba(3, 102, 255, 0) 48.05%, #0366FF 70.95%);
+  }
+  
+  @media (min-width: 768px) {
+	/* Tablet and larger screens */
+	.bg-linear-primary {
+	  background: linear-gradient(90deg, rgba(3, 102, 255, 0) 1.05%, #0366FF 44.95%);
+	}
+  }
 
+
+  .marquee {
+	display: flex;
+	animation: marquee 10s linear infinite;
+  }
+  
+  @keyframes marquee {
+	from {
+	  transform: translateX(100%);
+	}
+	to {
+	  transform: translateX(-100%);
+	}
+  }
+
+  .bg-linear-secondary {
+		/* Mobile default */
+		background: linear-gradient(180deg, rgba(2, 61, 153, 0) 20.52%, rgba(3, 101, 252, 0.970501) 50.04%, #0366FF 30.2%);
+	}
+	
+	@media (min-width: 768px) {
+	  .bg-linear-secondary {
+		background: linear-gradient(270deg, rgba(2, 61, 153, 0) 2.52%, rgba(3, 101, 252, 0.970501) 30.04%, #0366FF 80.2%);
+	}
 }
-
 
