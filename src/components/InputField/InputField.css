@@ -1,0 +1,12 @@
+.date-input {
+	position: relative;
+}
+/* To hide calendar */
+.date-input::-webkit-calendar-picker-indicator {
+	opacity: 0;
+	cursor: pointer;
+	position: absolute;
+	right: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+}
