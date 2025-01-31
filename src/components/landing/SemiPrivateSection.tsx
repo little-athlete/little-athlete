@@ -3,7 +3,7 @@ import React from 'react'
 
 const SemiPrivateSection = () => {
 	return (
-		<section id="private" className="bg-white">
+		<div className="bg-white">
 			<div className="mx-auto">
 				<div className="flex w-full flex-wrap lg:flex-nowrap">
 					<div className="order-2 w-full bg-secondary lg:order-1">
@@ -29,7 +29,7 @@ const SemiPrivateSection = () => {
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
 	)
 }
 

@@ -3,10 +3,51 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import WhastappIcon from '../Icon/IconWa'
-import { useSectionObserver } from '@/utils/useSectionObserver'
+
+export const useSectionObserver = (sections: string[], heroSectionId: string) => {
+	const [activeSection, setActiveSection] = useState<string | null>(null)
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						const sectionId = entry.target.id
+
+						if (window.scrollY <= 50) {
+							window.history.replaceState(null, '', location.pathname)
+							setActiveSection(null)
+						} else {
+							window.history.replaceState(null, '', `#${sectionId}`)
+							setActiveSection(`#${sectionId}`)
+						}
+					}
+				})
+			},
+
+			{ threshold: 0.2 }
+		)
+
+		sections.forEach((section) => {
+			const el = document.getElementById(section)
+			if (el) {
+				observer.observe(el)
+			}
+		})
+
+		return () => observer.disconnect()
+	}, [sections])
+
+	return activeSection
+}
 
 const Header = () => {
 	const [isScrolled, setIsScrolled] = useState<boolean>(false)
+
+	const activeSection = useSectionObserver(
+		['credibility', 'about', 'programs', 'testimonials'],
+		'hero'
+	)
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -24,26 +65,13 @@ const Header = () => {
 		{ href: '#testimonials', label: 'Testimonials' },
 	]
 
-	const activeSection = useSectionObserver([
-		'programs',
-		'about',
-		'credibility',
-		'testimonials',
-		'banner',
-		'ages',
-		'ads',
-		'facilities',
-		'hero',
-		'private',
-	])
-
 	console.log({ activeSection })
 
 	return (
 		<header
 			className={`fixed left-0 top-0 z-50 w-full py-2 ${isScrolled ? 'bg-white shadow-md' : 'bg-primary'} transition-all duration-300`}
 		>
-			<div className="container mx-auto flex flex-wrap items-center justify-between px-6">
+			<div className="container mx-auto flex flex-wrap items-center justify-between px-6 xl:justify-center xl:gap-[180px]">
 				<div className="logo md:order-1">
 					<Image
 						src="/logo-header.png"
@@ -58,7 +86,7 @@ const Header = () => {
 						<a
 							key={index}
 							href={link.href}
-							className="text-xs font-medium text-black hover:text-blue-700 lg:text-base"
+							className={`text-xs font-medium ${activeSection === link.href ? 'text-secondary' : 'text-black'} hover:text-blue-700 lg:text-base`}
 						>
 							{link.label}
 						</a>

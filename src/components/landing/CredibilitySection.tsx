@@ -24,6 +24,8 @@ const CredibilitySection: React.FC<CredibilitySectionProps> = ({ data }) => {
 				<div className="grid grid-cols-2 gap-6 md:grid-cols-5">
 					{data.map((el, i) => (
 						<div
+							data-aos="fade-right"
+							data-aos-delay={i * 200}
 							key={i}
 							className="rounded-2xl bg-white bg-[url('/bg-blue.png')] bg-cover p-6 text-center text-white shadow-md transition duration-300 hover:scale-105"
 						>

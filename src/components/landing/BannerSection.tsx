@@ -3,7 +3,7 @@ import WhastappIcon from '../Icon/IconWa'
 
 const BannerSection = () => {
 	return (
-		<section id="ads" className="bg-primary py-3">
+		<div className="bg-primary py-3">
 			<div className="container mx-auto flex flex-wrap items-center justify-center gap-4 px-6 lg:gap-8">
 				<p className="text-base font-semibold text-black lg:text-2xl">
 					Curious about our programs?
@@ -13,7 +13,7 @@ const BannerSection = () => {
 					<span className="text-sm lg:text-base xl:ml-2">Chat with us</span>
 				</button>
 			</div>
-		</section>
+		</div>
 	)
 }
 

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Sora, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
+import AOSProvider from '@/utils/AOSProvider'
 
 const sora = Sora({
 	variable: '--font-sora', // Pastikan nama variable sesuai
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html lang="en">
 			<body className={`${sora.variable} ${plusJakartaSans.variable} antialiased`}>
+				<AOSProvider />
 				{children}
 			</body>
 		</html>

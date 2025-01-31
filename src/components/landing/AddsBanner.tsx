@@ -2,7 +2,7 @@ import React from 'react'
 
 const AddsBannerSection = () => {
 	return (
-		<section id="banner" className="bg-white pb-16 pt-24">
+		<div className="bg-white pb-16 pt-24">
 			<div className="container mx-auto px-6">
 				<div className="grid w-full place-items-center">
 					<div className="flex h-[450px] rounded-[10px] bg-[url('/banner.png')] bg-contain bg-no-repeat lg:h-[237px] lg:w-[1141px] lg:bg-right">
@@ -37,7 +37,7 @@ const AddsBannerSection = () => {
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
 	)
 }
 

@@ -4,7 +4,7 @@ import IconDirection from '../Icon/IconDirection'
 
 const FacilitiesSection = () => {
 	return (
-		<section id="facilities" className="bg-white">
+		<div className="bg-white">
 			<div className="mx-auto pt-32 lg:container lg:px-4 lg:py-32">
 				<div className="w-full items-center lg:grid lg:grid-cols-2 lg:gap-16 lg:px-6">
 					<div className="mb-12 px-4 lg:mb-0 lg:px-0">
@@ -16,7 +16,7 @@ const FacilitiesSection = () => {
 							enjoy a comfortable and professional experience
 						</p>
 					</div>
-					<div>
+					<div data-aos="fade-left">
 						<Image
 							src={'/gor_1.png'}
 							alt="facilities"
@@ -25,13 +25,13 @@ const FacilitiesSection = () => {
 							className="hidden h-[400px] w-[530px] rounded-2xl lg:block"
 						/>
 					</div>
-					<div>
+					<div data-aos="fade-right">
 						<Image
 							src={'/gor_2.png'}
 							alt="facilities"
 							width={500}
 							height={500}
-							className="hidden h-[400px] w-[530px] lg:block"
+							className="hidden h-[400px] w-[530px] rounded-2xl lg:block"
 						/>
 					</div>
 					<div>
@@ -73,7 +73,7 @@ const FacilitiesSection = () => {
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
 	)
 }
 

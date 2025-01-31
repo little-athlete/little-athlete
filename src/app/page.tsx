@@ -147,14 +147,18 @@ export default function Home() {
 			<Header />
 			<HeroSection />
 			<CredibilitySection data={dataC} />
-			<AboutSection coachingData={coachingData} />
-			<FacilitiesSection />
-			<AgesSection trainingData={trainingData} />
-			<SemiPrivateSection />
-			<BannerSection />
-			<OurProgramSection sportsData={sportsData} />
-			<RunningTextSection />
-			<AddsBannerSection />
+			<section id="about" className="min-h-screen">
+				<AboutSection coachingData={coachingData} />
+				<FacilitiesSection />
+				<AgesSection trainingData={trainingData} />
+				<SemiPrivateSection />
+				<BannerSection />
+			</section>
+			<section id="programs">
+				<OurProgramSection sportsData={sportsData} />
+				<RunningTextSection />
+				<AddsBannerSection />
+			</section>
 			<TestimonialSection testimonials={testimonials} />
 			<Footer />
 		</main>

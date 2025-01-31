@@ -13,7 +13,7 @@ export const useSectionObserver = (sectionIds: string[]) => {
 					}
 				})
 			},
-			{ threshold: 0.2 } // Trigger jika 50% section terlihat
+			{ threshold: 1 } // Trigger jika 50% section terlihat
 		)
 
 		sectionIds.forEach((id) => {
