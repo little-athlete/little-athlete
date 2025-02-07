@@ -13,7 +13,7 @@ type TestimonialPropsType = {
 
 const TestimonialSection: React.FC<TestimonialPropsType> = ({ testimonials }) => {
 	return (
-		<section className="bg-white pb-16 lg:pt-24" id="testimonials">
+		<section className="bg-white pb-16 lg:pt-16" id="testimonials">
 			<div className="container mx-auto px-6">
 				<p className="mb-6 bg-gradient-to-r from-[#635AD9] to-[#219BE4] bg-clip-text text-sm font-bold text-transparent lg:mb-8 lg:text-center lg:text-base">
 					TESTIMONIAL

@@ -24,7 +24,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ coachingData }) => {
 					Our Passion, Your Advantage
 				</h2>
 
-				<div className="flex flex-wrap items-center justify-center gap-12">
+				<div className="flex flex-wrap items-center justify-center gap-20">
 					<div className="w-full lg:w-[524px]">
 						<h3 className="mb-10 text-[2rem] font-extrabold">
 							Internationally Certified Coaches
@@ -62,21 +62,29 @@ const AboutSection: React.FC<AboutSectionProps> = ({ coachingData }) => {
 						</ul>
 					</div>
 
-					<div className="-mb-24 flex gap-4 overflow-hidden lg:-mb-16 lg:w-[40%] lg:gap-10 lg:overflow-visible">
+					<div className="-mb-24 flex gap-4 overflow-hidden lg:-mb-16 lg:w-[38%] lg:gap-10 lg:overflow-visible">
 						<div>
 							<div
 								className="rounded-2xl"
 								data-aos="fade-down-right"
 								data-aos-delay={600}
 							>
-								<img src="/people.png" alt="Coach 1" className="mb-4 rounded-2xl" />
+								<img
+									src="/people.png"
+									alt="Coach 1"
+									className="mb-4 w-[248px] rounded-2xl"
+								/>
 							</div>
 							<div
 								className="rounded-2xl"
 								data-aos="fade-up-right"
 								data-aos-delay={600}
 							>
-								<img src="/people2.png" alt="Coach 2" className="rounded-2xl" />
+								<img
+									src="/people2.png"
+									alt="Coach 2"
+									className="w-[248px] rounded-2xl"
+								/>
 							</div>
 						</div>
 						<div className="block rounded-md lg:-mb-8">
@@ -88,7 +96,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ coachingData }) => {
 								<img
 									src="/people3.png"
 									alt="Coach 3"
-									className="mt-20 rounded-2xl lg:mt-28"
+									className="mt-20 w-[248px] rounded-2xl lg:mt-28"
 								/>
 							</div>
 							<div
@@ -99,7 +107,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ coachingData }) => {
 								<img
 									src="/people4.png"
 									alt="Coach 4"
-									className="mt-4 rounded-2xl"
+									className="mt-4 w-[248px] rounded-2xl"
 								/>
 							</div>
 						</div>
