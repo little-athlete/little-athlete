@@ -17,6 +17,7 @@ export enum InputType {
 	Select = 'select',
 	Textarea = 'textarea',
 	Search = 'search',
+	Url = 'url',
 }
 
 export interface InputProps {
