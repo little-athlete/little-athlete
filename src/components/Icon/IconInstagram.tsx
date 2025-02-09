@@ -11,7 +11,6 @@ interface IconInstagramProps {
 const IconInstagram: React.FC<IconInstagramProps> = ({
 	width = 32,
 	height = 32,
-	color = '#000',
 	className = '',
 	style = {},
 	...props

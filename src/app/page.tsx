@@ -1,10 +1,6 @@
-import { AmericanFlag } from '@/components/Icon/IconAmericanFlag'
 import BaseballIcon from '@/components/Icon/IconBaseball'
 import BasketBallIcon from '@/components/Icon/IconBasketball'
 import FootballIcon from '@/components/Icon/IconFootball'
-import LogoIcon from '@/components/Icon/IconLogo'
-import { QuotesIcon } from '@/components/Icon/IconQuotes'
-import { StarsIcon } from '@/components/Icon/IconStart'
 import TennisIcon from '@/components/Icon/IconTenis'
 import MaskingImage1Icon from '@/components/Icon/Masking_1'
 import MaskingImage2Icon from '@/components/Icon/Masking_2'
@@ -23,7 +19,6 @@ import OurProgramSection from '@/components/landing/OurProgram'
 import RunningTextSection from '@/components/landing/RunningTextSection'
 import SemiPrivateSection from '@/components/landing/SemiPrivateSection'
 import TestimonialSection from '@/components/landing/TestimonialSection'
-import Image from 'next/image'
 
 export default function Home() {
 	const dataC = [
@@ -47,13 +42,6 @@ export default function Home() {
 			value: 2,
 			label: 'Locations',
 		},
-	]
-
-	const navLinks = [
-		{ href: '#credibility', label: 'Our Credibility' },
-		{ href: '#about', label: 'About Us' },
-		{ href: '#programs', label: 'Programs' },
-		{ href: '#testimonials', label: 'Testimonials' },
 	]
 
 	const coachingData = [

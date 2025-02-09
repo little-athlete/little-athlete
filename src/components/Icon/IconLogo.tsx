@@ -11,7 +11,6 @@ interface LogoIconProps {
 const LogoIcon: React.FC<LogoIconProps> = ({
 	width = 33,
 	height = 33,
-	color = '#FC8A00',
 	className = '',
 	style = {},
 	...props

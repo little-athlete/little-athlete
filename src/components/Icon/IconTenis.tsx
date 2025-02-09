@@ -11,7 +11,6 @@ interface TennisIconProps {
 const TennisIcon: React.FC<TennisIconProps> = ({
 	width = 63,
 	height = 63,
-	color = '#FC8A00',
 	className = '',
 	style = {},
 	...props

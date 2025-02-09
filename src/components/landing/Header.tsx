@@ -5,7 +5,7 @@ import Image from 'next/image'
 import WhastappIcon from '../Icon/IconWa'
 import Link from 'next/link'
 
-export const useSectionObserver = (sections: string[], heroSectionId: string) => {
+export const useSectionObserver = (sections: string[]) => {
 	const [activeSection, setActiveSection] = useState<string | null>(null)
 
 	useEffect(() => {
