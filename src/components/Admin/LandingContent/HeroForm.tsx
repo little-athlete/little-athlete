@@ -2,6 +2,7 @@ import React from 'react'
 import { LandingContentProps } from '@/components/Admin/LandingContent/LandingContentProps'
 import Box, { BoxDirection } from '@/components/Box'
 import Input from '@/components/InputField/InputField'
+import PreviewImage from '@/components/Admin/PreviewImage'
 
 const HeroForm = ({ contentData, setContentData }: LandingContentProps) => {
 	return (
@@ -16,6 +17,7 @@ const HeroForm = ({ contentData, setContentData }: LandingContentProps) => {
 				value={contentData?.hero_desc}
 				onChange={(e) => setContentData('hero_desc', e.target.value)}
 			/>
+			<PreviewImage src={contentData?.hero_image_url} alt={`image-1`} />
 			<Input
 				label={'Hero Image'}
 				value={contentData?.hero_image_url}

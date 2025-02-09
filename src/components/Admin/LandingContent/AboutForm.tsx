@@ -9,6 +9,7 @@ import Typography, { TextSize } from '@/components/Typography/Typography'
 import { IAboutData } from '@/db/firestore/interfaces/landing'
 import Box, { BoxDirection } from '@/components/Box'
 import { onChangeArrayItem, onDeleteArrayItem } from '@/utils/stateUtils'
+import PreviewImage from '@/components/Admin/PreviewImage'
 
 const AboutForm = ({ contentData, setContentData }: LandingContentProps) => {
 	const onChangeCoachImages = (newValue: string, index?: number) => {
@@ -55,13 +56,14 @@ const AboutForm = ({ contentData, setContentData }: LandingContentProps) => {
 			</Typography>
 			{contentData?.about_coach_images?.map((item, i) => (
 				<Box flex className={'gap-2'} key={`coach-image-${i}`}>
-					<Input
-						className={'flex-1'}
-						type={InputType.Url}
-						value={item}
-						onChange={(e) => onChangeCoachImages(e.target.value, i)}
-					/>
-
+					<Box className={'flex-1'}>
+						<PreviewImage src={item} alt={`image-${i}`} />
+						<Input
+							type={InputType.Url}
+							value={item}
+							onChange={(e) => onChangeCoachImages(e.target.value, i)}
+						/>
+					</Box>
 					<Button
 						variant={ButtonVariant.Secondary}
 						label={'Delete'}
@@ -69,6 +71,7 @@ const AboutForm = ({ contentData, setContentData }: LandingContentProps) => {
 						onClick={() =>
 							onDeleteArrayItem(contentData, setContentData, 'about_coach_images', i)
 						}
+						containerClassName={'self-end'}
 					/>
 				</Box>
 			))}
@@ -96,6 +99,7 @@ const AboutForm = ({ contentData, setContentData }: LandingContentProps) => {
 						value={item.country}
 						onChange={(e) => onChangeAboutData('country', e.target.value, i)}
 					/>
+					<PreviewImage src={item.image_url} alt={item.alt_text} />
 					<Input
 						label={'Image'}
 						value={item.image_url}

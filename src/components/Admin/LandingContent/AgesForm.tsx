@@ -9,6 +9,7 @@ import Typography, { TextSize } from '@/components/Typography/Typography'
 import { IAgesBadge } from '@/db/firestore/interfaces/landing'
 import { onChangeArrayItem, onDeleteArrayItem } from '@/utils/stateUtils'
 import Button, { ButtonVariant } from '@/components/Button/Button'
+import PreviewImage from '@/components/Admin/PreviewImage'
 
 const AgesForm = ({ contentData, setContentData }: LandingContentProps) => {
 	const onChangeBadges = (field: keyof IAgesBadge, value: string, index: number) => {
@@ -58,6 +59,7 @@ const AgesForm = ({ contentData, setContentData }: LandingContentProps) => {
 						value={item.subtitle}
 						onChange={(e) => onChangeBadges('subtitle', e.target.value, i)}
 					/>
+					<PreviewImage src={item.image_url} alt={`image-${i}`} />
 					<Input
 						label={'Image'}
 						value={item.image_url}

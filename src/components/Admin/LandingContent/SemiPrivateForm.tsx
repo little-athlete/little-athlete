@@ -2,6 +2,7 @@ import React from 'react'
 import { LandingContentProps } from '@/components/Admin/LandingContent/LandingContentProps'
 import Input from '@/components/InputField/InputField'
 import Box, { BoxDirection } from '@/components/Box'
+import PreviewImage from '@/components/Admin/PreviewImage'
 
 const SemiPrivateForm = ({ contentData, setContentData }: LandingContentProps) => {
 	return (
@@ -16,6 +17,7 @@ const SemiPrivateForm = ({ contentData, setContentData }: LandingContentProps) =
 				value={contentData?.semi_private_desc}
 				onChange={(e) => setContentData('semi_private_desc', e.target.value)}
 			/>
+			<PreviewImage src={contentData?.semi_private_image_url} alt={`image-1`} />
 			<Input
 				label={'Semi Private Image'}
 				value={contentData?.semi_private_image_url}

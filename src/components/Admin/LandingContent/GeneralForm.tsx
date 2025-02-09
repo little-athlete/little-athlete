@@ -5,6 +5,7 @@ import Input from '@/components/InputField/InputField'
 import Typography, { TextSize } from '@/components/Typography/Typography'
 import Button, { ButtonVariant } from '@/components/Button/Button'
 import { onChangeArrayItem, onDeleteArrayItem } from '@/utils/stateUtils'
+import PreviewImage from '@/components/Admin/PreviewImage'
 
 const GeneralForm = ({ contentData, setContentData }: LandingContentProps) => {
 	/**
@@ -17,6 +18,7 @@ const GeneralForm = ({ contentData, setContentData }: LandingContentProps) => {
 	}
 	return (
 		<Box flex flexDirection={BoxDirection.Col} className={'mt-8 gap-4'}>
+			<PreviewImage src={contentData?.logo_url} alt={`image-1`} />
 			<Input
 				label={'Logo Url'}
 				value={contentData?.logo_url}

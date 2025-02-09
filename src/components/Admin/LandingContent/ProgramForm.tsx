@@ -9,6 +9,7 @@ import Box, { BoxDirection } from '@/components/Box'
 import Typography, { TextSize } from '@/components/Typography/Typography'
 import Input from '@/components/InputField/InputField'
 import Button, { ButtonVariant } from '@/components/Button/Button'
+import PreviewImage from '@/components/Admin/PreviewImage'
 
 const ProgramForm = ({ contentData, setContentData }: LandingContentProps) => {
 	const onChangeProgram = (field: keyof IProgramsData, value: string, index: number) => {
@@ -47,6 +48,7 @@ const ProgramForm = ({ contentData, setContentData }: LandingContentProps) => {
 						value={item.name}
 						onChange={(e) => onChangeProgram('name', e.target.value, i)}
 					/>
+					<PreviewImage src={item?.image_url} alt={`image-${i}`} />
 					<Input
 						label={'Image'}
 						value={item.image_url}

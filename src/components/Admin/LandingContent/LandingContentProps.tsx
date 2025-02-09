@@ -23,7 +23,7 @@ export const DefaultTestimony: ITestimonyData = {
 
 export const DefaultAbout: IAboutData = {
 	country: '',
-	image_url: '',
+	image_url: '/sample.png',
 	alt_text: '',
 	desc: '',
 }
@@ -39,7 +39,7 @@ export const DefaultPrograms: IProgramsData = {
 	alt_text: '',
 	name: '',
 	reverse: false,
-	image_url: '',
+	image_url: '/sample.png',
 }
 
 export const DefaultSocialMedia: ISocialMediaData = {
@@ -54,7 +54,7 @@ export const DefaultCredibility: ICredibilityData = {
 }
 
 export const DefaultAgesBadge: IAgesBadge = {
-	image_url: '',
+	image_url: '/sample.png',
 	subtitle: '',
 	title: '',
 }

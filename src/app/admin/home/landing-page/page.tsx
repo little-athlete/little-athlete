@@ -2,7 +2,7 @@
 
 import React, { useCallback, useEffect, useState } from 'react'
 import Typography, { FontWeight, TextSize } from '@/components/Typography/Typography'
-import { getContentData } from '@/db/firestore/landing_page'
+import { getContentData, saveContentData } from '@/db/firestore/landing_page'
 import Input, { InputType } from '@/components/InputField/InputField'
 import AboutForm from '@/components/Admin/LandingContent/AboutForm'
 import AdsForm from '@/components/Admin/LandingContent/AdsForm'
@@ -19,6 +19,7 @@ import SocialMediaForm from '@/components/Admin/LandingContent/SocialMediaForm'
 import TestimonyForm from '@/components/Admin/LandingContent/TestimonyForm'
 import { ILandingPage } from '@/db/firestore/interfaces/landing'
 import { FuncSetContent } from '@/utils/stateUtils'
+import Button, { ButtonVariant } from '@/components/Button/Button'
 
 const Section = {
 	Placeholder: 'Select Section',
@@ -46,6 +47,7 @@ const itemsOptions = Object.values(Section).map((item) => ({
 const LandingPage = () => {
 	const [selectedSection, setSelectedSection] = useState(Section.Placeholder)
 	const [contentData, setContentData] = useState<ILandingPage>()
+	const [loading, setLoading] = useState(false)
 
 	const fetchContentData = useCallback(async () => {
 		const data = await getContentData()
@@ -60,6 +62,13 @@ const LandingPage = () => {
 
 	const onChangeContentData: FuncSetContent<ILandingPage> = (field, value) => {
 		setContentData((old) => ({ ...old, [field]: value }) as ILandingPage)
+	}
+
+	const onContentDataSave = async () => {
+		setLoading(true)
+		await saveContentData(contentData as ILandingPage)
+		setLoading(false)
+		console.log('Success')
 	}
 
 	const renderSection = () => {
@@ -132,6 +141,17 @@ const LandingPage = () => {
 			/>
 
 			{renderSection()}
+
+			{selectedSection !== Section.Placeholder && (
+				<Button
+					variant={ButtonVariant.Secondary}
+					label={'Save'}
+					textSize={TextSize.XSmall}
+					onClick={onContentDataSave}
+					isLoading={loading}
+					containerClassName={'self-end bg-blue-500 hover:bg-blue-700'}
+				/>
+			)}
 		</div>
 	)
 }

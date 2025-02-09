@@ -9,6 +9,7 @@ import Box, { BoxDirection } from '@/components/Box'
 import Typography, { TextSize } from '@/components/Typography/Typography'
 import Input from '@/components/InputField/InputField'
 import Button, { ButtonVariant } from '@/components/Button/Button'
+import PreviewImage from '@/components/Admin/PreviewImage'
 
 const SocialMediaForm = ({ contentData, setContentData }: LandingContentProps) => {
 	const onChangeSocialMedia = (field: keyof ISocialMediaData, value: string, index: number) => {
@@ -47,6 +48,7 @@ const SocialMediaForm = ({ contentData, setContentData }: LandingContentProps) =
 						value={item.url}
 						onChange={(e) => onChangeSocialMedia('url', e.target.value, i)}
 					/>
+					<PreviewImage src={item.logo} alt={`image-${i}`} />
 					<Input
 						label={'Social Logo'}
 						value={item.logo}
