@@ -38,7 +38,7 @@ const LocationForm = ({ contentData, setContentData }: LandingContentProps) => {
 					key={`locations_${i}`}
 				>
 					<Input
-						label={'Location Title'}
+						label={'Title'}
 						value={item.title}
 						onChange={(e) => onChangeLocation('title', e.target.value, i)}
 					/>

@@ -7,22 +7,22 @@ const FacilityForm = ({ contentData, setContentData }: LandingContentProps) => {
 	return (
 		<Box flex flexDirection={BoxDirection.Col} className={'mt-8 gap-4'}>
 			<Input
-				label={'Title'}
+				label={'Facility Title'}
 				value={contentData?.facility_title}
 				onChange={(e) => setContentData('facility_title', e.target.value)}
 			/>
 			<Input
-				label={'Description'}
+				label={'Facility Description'}
 				value={contentData?.facility_desc}
 				onChange={(e) => setContentData('facility_desc', e.target.value)}
 			/>
 			<Input
-				label={'Image 1'}
+				label={'Facility Image 1'}
 				value={contentData?.facility_image_url_1}
 				onChange={(e) => setContentData('facility_image_url_1', e.target.value)}
 			/>
 			<Input
-				label={'Image 2'}
+				label={'Facility Image 2'}
 				value={contentData?.facility_image_url_2}
 				onChange={(e) => setContentData('facility_image_url_2', e.target.value)}
 			/>

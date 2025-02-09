@@ -27,12 +27,12 @@ const CredibilityForm = ({ contentData, setContentData }: LandingContentProps) =
 	return (
 		<Box flex flexDirection={BoxDirection.Col} className={'mt-8 gap-4'}>
 			<Input
-				label={'Title'}
+				label={'Credibility Title'}
 				value={contentData?.credibility_title}
 				onChange={(e) => setContentData('credibility_title', e.target.value)}
 			/>
 			<Input
-				label={'Description'}
+				label={'Credibility Description'}
 				value={contentData?.credibility_desc}
 				onChange={(e) => setContentData('credibility_desc', e.target.value)}
 			/>

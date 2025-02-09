@@ -97,7 +97,7 @@ const AboutForm = ({ contentData, setContentData }: LandingContentProps) => {
 						onChange={(e) => onChangeAboutData('country', e.target.value, i)}
 					/>
 					<Input
-						label={'Image Url'}
+						label={'Image'}
 						value={item.image_url}
 						onChange={(e) => onChangeAboutData('image_url', e.target.value, i)}
 					/>

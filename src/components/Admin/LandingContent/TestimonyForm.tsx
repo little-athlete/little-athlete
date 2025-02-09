@@ -44,17 +44,17 @@ const TestimonyForm = ({ contentData, setContentData }: LandingContentProps) => 
 					key={`testimony_${i}`}
 				>
 					<Input
-						label={'Testimony Name'}
+						label={'Name'}
 						value={item.name}
 						onChange={(e) => onChangeTestimony('name', e.target.value, i)}
 					/>
 					<Input
-						label={'Address'}
+						label={'Text'}
 						value={item.text}
 						onChange={(e) => onChangeTestimony('text', e.target.value, i)}
 					/>
 					<Input
-						label={'Link Text'}
+						label={'Star'}
 						type={InputType.Number}
 						value={String(item.star)}
 						onChange={(e) => onChangeTestimony('star', e.target.value, i)}
