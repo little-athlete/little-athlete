@@ -1,42 +1,35 @@
 import React from 'react'
 import Input, { InputType } from '@/components/InputField/InputField'
 import {
+	DefaultAbout,
 	LandingContentProps,
-	onChangeArray,
 } from '@/components/Admin/LandingContent/LandingContentProps'
 import Button, { ButtonVariant } from '@/components/Button/Button'
 import Typography, { TextSize } from '@/components/Typography/Typography'
 import { IAboutData } from '@/db/firestore/interfaces/landing'
+import Box, { BoxDirection } from '@/components/Box'
+import { onChangeArrayItem, onDeleteArrayItem } from '@/utils/stateUtils'
 
 const AboutForm = ({ contentData, setContentData }: LandingContentProps) => {
 	const onChangeCoachImages = (newValue: string, index?: number) => {
-		onChangeArray(
-			contentData?.about_coach_images,
-			setContentData,
-			'about_coach_images',
-			newValue,
-			index
-		)
+		onChangeArrayItem(contentData, setContentData, 'about_coach_images', newValue, index)
 	}
 
 	const onChangeAboutData = (field: keyof IAboutData, value: string, index: number) => {
-		const aboutData = [...(contentData?.about_data || [])]
-		const newValue = { ...aboutData[index], [field]: value }
-		onChangeArray(contentData?.about_data, setContentData, 'about_data', newValue, index)
+		const newValue = { ...contentData?.about_data?.[index], [field]: value }
+		onChangeArrayItem(contentData, setContentData, 'about_data', newValue, index)
 	}
 
 	const onAddAboutData = () => {
-		const newValue: IAboutData = { country: '', image_url: '', alt_text: '', desc: '' }
-		onChangeArray(contentData?.about_data, setContentData, 'about_data', newValue)
+		onChangeArrayItem(contentData, setContentData, 'about_data', DefaultAbout)
 	}
 
 	const onDeleteAboutData = (index: number) => {
-		const aboutData = contentData?.about_data?.filter((_, i) => i !== index)
-		setContentData('about_data', aboutData)
+		onDeleteArrayItem(contentData, setContentData, 'about_data', index)
 	}
 
 	return (
-		<div className="mt-8 flex flex-col gap-4">
+		<Box flex flexDirection={BoxDirection.Col} className={'mt-8 gap-4'}>
 			<Input
 				label={'About Title'}
 				value={contentData?.about_title}
@@ -61,7 +54,7 @@ const AboutForm = ({ contentData, setContentData }: LandingContentProps) => {
 				About Coach Images
 			</Typography>
 			{contentData?.about_coach_images?.map((item, i) => (
-				<div className={'flex gap-2'} key={`coach-image-${i}`}>
+				<Box flex className={'gap-2'} key={`coach-image-${i}`}>
 					<Input
 						className={'flex-1'}
 						type={InputType.Url}
@@ -73,9 +66,11 @@ const AboutForm = ({ contentData, setContentData }: LandingContentProps) => {
 						variant={ButtonVariant.Secondary}
 						label={'Delete'}
 						textSize={TextSize.XSmall}
-						onClick={() => onChangeCoachImages('', i)}
+						onClick={() =>
+							onDeleteArrayItem(contentData, setContentData, 'about_coach_images', i)
+						}
 					/>
-				</div>
+				</Box>
 			))}
 			<Button
 				variant={ButtonVariant.Secondary}
@@ -90,7 +85,12 @@ const AboutForm = ({ contentData, setContentData }: LandingContentProps) => {
 				About Data List
 			</Typography>
 			{contentData?.about_data?.map((item, i) => (
-				<div className="flex flex-col gap-2" key={`about_data_${i}`}>
+				<Box
+					flex
+					flexDirection={BoxDirection.Col}
+					className={'gap-2'}
+					key={`about_data_${i}`}
+				>
 					<Input
 						label={'Country Name'}
 						value={item.country}
@@ -117,7 +117,7 @@ const AboutForm = ({ contentData, setContentData }: LandingContentProps) => {
 						textSize={TextSize.XSmall}
 						onClick={() => onDeleteAboutData(i)}
 					/>
-				</div>
+				</Box>
 			))}
 			<Button
 				variant={ButtonVariant.Secondary}
@@ -126,7 +126,7 @@ const AboutForm = ({ contentData, setContentData }: LandingContentProps) => {
 				onClick={onAddAboutData}
 			/>
 			{/*About Data End*/}
-		</div>
+		</Box>
 	)
 }
 

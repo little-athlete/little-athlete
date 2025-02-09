@@ -1,26 +1,60 @@
-import { ILandingPage } from '@/db/firestore/interfaces/landing'
-
-export type FuncSetContent = <ValueType>(field: keyof ILandingPage, value: ValueType) => void
+import {
+	IAboutData,
+	IAgesBadge,
+	ICredibilityData,
+	ILandingPage,
+	ILocation,
+	IProgramsData,
+	ISocialMediaData,
+	ITestimonyData,
+} from '@/db/firestore/interfaces/landing'
+import { FuncSetContent } from '@/utils/stateUtils'
 
 export interface LandingContentProps {
 	contentData?: ILandingPage
-	setContentData: FuncSetContent
+	setContentData: FuncSetContent<ILandingPage>
 }
 
-// utils func
+export const DefaultTestimony: ITestimonyData = {
+	name: '',
+	star: 5,
+	text: '',
+}
 
-export const onChangeArray = <ValueType,>(
-	data: Array<ValueType> | undefined,
-	setData: FuncSetContent,
-	field: keyof ILandingPage,
-	newValue: ValueType,
-	index?: number
-) => {
-	const idx = index !== undefined ? index : data?.length || 0
-	const arr = data ? data : []
-	const oldArr = [...arr]
-	oldArr[idx] = newValue
+export const DefaultAbout: IAboutData = {
+	country: '',
+	image_url: '',
+	alt_text: '',
+	desc: '',
+}
 
-	const newArr = oldArr.filter(Boolean)
-	setData(field, newArr)
+export const DefaultLocation: ILocation = {
+	address: '',
+	title: '',
+	link_title: '',
+	link: '',
+}
+
+export const DefaultPrograms: IProgramsData = {
+	alt_text: '',
+	name: '',
+	reverse: false,
+	image_url: '',
+}
+
+export const DefaultSocialMedia: ISocialMediaData = {
+	name: '',
+	url: '',
+	logo: '',
+}
+
+export const DefaultCredibility: ICredibilityData = {
+	label: '',
+	value: '',
+}
+
+export const DefaultAgesBadge: IAgesBadge = {
+	image_url: '',
+	subtitle: '',
+	title: '',
 }

@@ -18,6 +18,7 @@ import SemiPrivateForm from '@/components/Admin/LandingContent/SemiPrivateForm'
 import SocialMediaForm from '@/components/Admin/LandingContent/SocialMediaForm'
 import TestimonyForm from '@/components/Admin/LandingContent/TestimonyForm'
 import { ILandingPage } from '@/db/firestore/interfaces/landing'
+import { FuncSetContent } from '@/utils/stateUtils'
 
 const Section = {
 	Placeholder: 'Select Section',
@@ -57,8 +58,8 @@ const LandingPage = () => {
 		}
 	}, [contentData?.id, fetchContentData])
 
-	const onChangeContentData = <T,>(field: keyof ILandingPage, value: T) => {
-		setContentData((old) => ({ ...old, [field]: value }))
+	const onChangeContentData: FuncSetContent<ILandingPage> = (field, value) => {
+		setContentData((old) => ({ ...old, [field]: value }) as ILandingPage)
 	}
 
 	const renderSection = () => {
@@ -69,6 +70,8 @@ const LandingPage = () => {
 				return <AdsForm contentData={contentData} setContentData={onChangeContentData} />
 			case Section.Ages:
 				return <AgesForm contentData={contentData} setContentData={onChangeContentData} />
+			case Section.Banner:
+				return <BannerForm contentData={contentData} setContentData={onChangeContentData} />
 			case Section.Credibility:
 				return (
 					<CredibilityForm
@@ -76,8 +79,6 @@ const LandingPage = () => {
 						setContentData={onChangeContentData}
 					/>
 				)
-			case Section.Banner:
-				return <BannerForm contentData={contentData} setContentData={onChangeContentData} />
 			case Section.Facility:
 				return (
 					<FacilityForm contentData={contentData} setContentData={onChangeContentData} />
