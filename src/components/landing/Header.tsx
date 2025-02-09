@@ -45,10 +45,7 @@ export const useSectionObserver = (sections: string[]) => {
 const Header = () => {
 	const [isScrolled, setIsScrolled] = useState<boolean>(false)
 
-	const activeSection = useSectionObserver(
-		['credibility', 'about', 'programs', 'testimonials'],
-		'hero'
-	)
+	const activeSection = useSectionObserver(['credibility', 'about', 'programs', 'testimonials'])
 
 	useEffect(() => {
 		const handleScroll = () => {
