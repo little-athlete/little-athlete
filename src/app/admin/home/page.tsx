@@ -8,46 +8,7 @@ import React from 'react'
 const AdminHomePage = () => {
 	return (
 		<Box className="mt-6 w-1/2 px-6 xl:px-12">
-			<Card className="bg-slate-200">
-				<Box spaceVertical variant={BoxVariant.Medium}>
-					<Typography fontWeight={FontWeight.SemiBold}>asjndjas</Typography>
-				</Box>
-				<Box spaceVertical variant={BoxVariant.Medium}>
-					<Input type={InputType.Text} label={'Home'} placeholder={''} required />
-				</Box>
-				<Box spaceVertical variant={BoxVariant.Medium}>
-					<Input type={InputType.Email} label={'jansd'} placeholder={''} />
-				</Box>
-				<Box spaceVertical variant={BoxVariant.Medium}>
-					<Input type={InputType.Email} label={'jansd'} placeholder={''} />
-				</Box>
-				<Box spaceVertical variant={BoxVariant.Medium}>
-					<Input type={InputType.Email} label={'jansd'} placeholder={''} />
-				</Box>
-				<Box spaceVertical variant={BoxVariant.Medium}>
-					<Input type={InputType.Email} label={'jansd'} placeholder={''} />
-				</Box>
-			</Card>
-			<Card className="bg-slate-200">
-				<Box spaceVertical variant={BoxVariant.Medium}>
-					<Typography fontWeight={FontWeight.SemiBold}>asjndjas</Typography>
-				</Box>
-				<Box spaceVertical variant={BoxVariant.Medium}>
-					<Input type={InputType.Text} label={'Home'} placeholder={''} required />
-				</Box>
-				<Box spaceVertical variant={BoxVariant.Medium}>
-					<Input type={InputType.Email} label={'jansd'} placeholder={''} />
-				</Box>
-				<Box spaceVertical variant={BoxVariant.Medium}>
-					<Input type={InputType.Email} label={'jansd'} placeholder={''} />
-				</Box>
-				<Box spaceVertical variant={BoxVariant.Medium}>
-					<Input type={InputType.Email} label={'jansd'} placeholder={''} />
-				</Box>
-				<Box spaceVertical variant={BoxVariant.Medium}>
-					<Input type={InputType.Email} label={'jansd'} placeholder={''} />
-				</Box>
-			</Card>
+			<Typography>Welcome!!</Typography>
 			<Card className="bg-slate-200">
 				<Box spaceVertical variant={BoxVariant.Medium}>
 					<Typography fontWeight={FontWeight.SemiBold}>asjndjas</Typography>
