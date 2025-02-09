@@ -24,12 +24,12 @@ const AboutSection: React.FC<AboutSectionProps> = ({ coachingData }) => {
 					Our Passion, Your Advantage
 				</h2>
 
-				<div className="flex flex-wrap items-center justify-center gap-20">
+				<div className="flex flex-wrap items-center justify-center gap-12 lg:gap-20">
 					<div className="w-full lg:w-[524px]">
-						<h3 className="mb-10 text-[2rem] font-extrabold">
+						<h3 className="mb-8 text-[2rem] font-extrabold">
 							Internationally Certified Coaches
 						</h3>
-						<p className="mb-9 text-base lg:mb-14">
+						<p className="mb-4 text-base lg:mb-14">
 							We believe in providing the best for our young learners. Our
 							internationally certified coaches bring a wealth of knowledge and
 							experience to every session, creating a supportive and enriching
@@ -42,7 +42,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ coachingData }) => {
 									data-aos="fade-up-right"
 									data-aos-delay={index * 200}
 									key={index}
-									className={`flex w-full items-center gap-8 rounded-2xl bg-card-001 p-6 lg:w-[427px]`}
+									className={`flex w-full items-center gap-8 rounded-2xl bg-card-001 px-6 py-4 lg:w-[427px]`}
 								>
 									<Image
 										src={item.imageSrc}
@@ -62,7 +62,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ coachingData }) => {
 						</ul>
 					</div>
 
-					<div className="-mb-24 flex gap-4 overflow-hidden lg:-mb-16 lg:w-[38%] lg:gap-10 lg:overflow-visible">
+					<div className="-mb-32 flex gap-4 overflow-hidden lg:-mb-32 lg:w-[38%] lg:gap-10 lg:overflow-visible">
 						<div>
 							<div
 								className="rounded-2xl"
@@ -72,7 +72,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ coachingData }) => {
 								<img
 									src="/people.png"
 									alt="Coach 1"
-									className="mb-4 w-[248px] rounded-2xl"
+									className="mb-4 w-[250px] rounded-2xl object-cover lg:h-[285px]"
 								/>
 							</div>
 							<div
@@ -83,7 +83,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ coachingData }) => {
 								<img
 									src="/people2.png"
 									alt="Coach 2"
-									className="w-[248px] rounded-2xl"
+									className="w-[250px] rounded-2xl object-cover lg:h-[285px]"
 								/>
 							</div>
 						</div>
@@ -96,7 +96,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ coachingData }) => {
 								<img
 									src="/people3.png"
 									alt="Coach 3"
-									className="mt-20 w-[248px] rounded-2xl lg:mt-28"
+									className="mt-16 w-[250px] rounded-2xl object-cover lg:mt-28 lg:h-[285px]"
 								/>
 							</div>
 							<div
@@ -107,7 +107,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ coachingData }) => {
 								<img
 									src="/people4.png"
 									alt="Coach 4"
-									className="mt-4 w-[248px] rounded-2xl"
+									className="mt-4 w-[250px] rounded-2xl object-cover lg:h-[285px]"
 								/>
 							</div>
 						</div>

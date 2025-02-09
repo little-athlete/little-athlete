@@ -9,6 +9,7 @@ const AOSProvider = () => {
 		AOS.init({
 			duration: 2000, // Durasi animasi
 			offset: 150, // Mulai animasi setelah scroll 50px
+			once: true,
 		})
 	}, [])
 

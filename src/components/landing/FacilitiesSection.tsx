@@ -34,7 +34,7 @@ const FacilitiesSection = () => {
 							className="hidden h-[400px] w-[530px] rounded-2xl lg:block"
 						/>
 					</div>
-					<div className="w-[85%] justify-self-start">
+					<div className="justify-self-start lg:w-[85%]">
 						<div className="relative flex h-[300px] flex-col justify-end rounded-none bg-[url('/gor_1.png')] bg-cover bg-no-repeat px-4 pb-4 lg:block lg:h-auto lg:bg-none lg:px-0 lg:pb-0">
 							<div className="absolute inset-0 bg-black opacity-50 lg:hidden"></div>
 							<div className="relative z-10">
