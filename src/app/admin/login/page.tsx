@@ -1,6 +1,6 @@
 'use client'
 
-import Button from '@/components/Button/Button'
+import Button, { ButtonVariant } from '@/components/Button/Button'
 import Card from '@/components/Card/Card'
 import Input, { InputType } from '@/components/InputField/InputField'
 import Typography, {
@@ -8,11 +8,20 @@ import Typography, {
 	TextSize,
 	VariantTypography,
 } from '@/components/Typography/Typography'
-import Image from 'next/image'
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '@/config/firebase'
+import { useState } from 'react'
 
 export default function LoginPage() {
 	// const { handleSubmit, onSubmit, register, loading, errorValidate, errorSubmit } =
 	// 	useLoginService()
+	const [email, setEmail] = useState('')
+	const [password, setPassword] = useState('')
+
+	const handleLogin = async () => {
+		const result = await signInWithEmailAndPassword(auth, email, password)
+		console.log(result)
+	}
 
 	return (
 		<main className="flex min-h-screen w-full items-center justify-center bg-secondary">
@@ -26,18 +35,29 @@ export default function LoginPage() {
 						Login
 					</Typography>
 					<div>
-						<Input type={InputType.Text} label={'Email'} placeholder={''} />
+						<Input
+							type={InputType.Text}
+							label={'Email'}
+							placeholder={''}
+							onChange={(e) => setEmail(e.target.value)}
+						/>
 					</div>
 					<div className="mt-2">
-						<Input type={InputType.Password} label={'Password'} placeholder={''} />
+						<Input
+							type={InputType.Password}
+							label={'Password'}
+							placeholder={''}
+							onChange={(e) => setPassword(e.target.value)}
+						/>
 					</div>
 					<div className="mt-8">
 						<Button
 							label={'Login'}
 							full
+							variant={ButtonVariant.Secondary}
 							textSize={TextSize.Medium}
 							textClassName="!font-medium"
-							type="submit"
+							onClick={handleLogin}
 						/>
 					</div>
 				</Card>
