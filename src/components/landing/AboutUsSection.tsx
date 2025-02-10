@@ -3,15 +3,7 @@
 import { ILandingPage } from '@/db/firestore/interfaces/landing'
 import Image from 'next/image'
 
-interface CoachingData {
-	country: string
-	imageSrc: string
-	altText: string
-	description: string
-}
-
 interface AboutSectionProps {
-	coachingData: CoachingData[]
 	data: ILandingPage
 }
 

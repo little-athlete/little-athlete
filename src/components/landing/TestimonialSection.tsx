@@ -6,17 +6,13 @@ import 'keen-slider/keen-slider.min.css'
 import { StarsIcon } from '../Icon/IconStart'
 import { QuotesIcon } from '../Icon/IconQuotes'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ILandingPage } from '@/db/firestore/interfaces/landing'
 
 type TestimonialPropsType = {
-	testimonials: {
-		id: number
-		name: string
-		text: string
-		rating: number
-	}[]
+	data: ILandingPage
 }
 
-const TestimonialSection: React.FC<TestimonialPropsType> = ({ testimonials }) => {
+const TestimonialSection: React.FC<TestimonialPropsType> = ({ data }) => {
 	const [sliderRef, instanceRef] = useKeenSlider({
 		loop: true,
 		slides: { perView: 4, spacing: 15 },
@@ -28,19 +24,19 @@ const TestimonialSection: React.FC<TestimonialPropsType> = ({ testimonials }) =>
 					TESTIMONIAL
 				</p>
 				<p className="text-xl font-extrabold text-black lg:text-center lg:text-[2rem]">
-					What parents say about us
+					{data?.testimony_title}
 				</p>
 				<div className="mx-auto max-w-7xl">
 					<div className="hidden lg:block">
 						<div ref={sliderRef} className="keen-slider mt-8 hidden pb-12 lg:mt-12">
-							{testimonials.map((testimonial) => (
+							{data?.testimony_data?.map((testimonial, i) => (
 								<div
-									key={testimonial.id}
+									key={i}
 									className="keen-slider__slide flex h-[326px] w-[250px] flex-shrink-0 flex-col items-center rounded-md bg-white p-6 px-6 py-6 shadow-lg lg:w-[370px]"
 								>
 									<div className="flex w-full items-end justify-between">
 										<div className="flex">
-											{[...Array(testimonial.rating)].map((_, index) => (
+											{[...Array(testimonial.star)].map((_, index) => (
 												<StarsIcon key={index} />
 											))}
 										</div>
@@ -60,14 +56,14 @@ const TestimonialSection: React.FC<TestimonialPropsType> = ({ testimonials }) =>
 
 					{/* MOBILE VERSION */}
 					<div className="scrollbar-hide mt-8 flex gap-4 overflow-x-auto px-4 py-9 lg:mt-12 lg:hidden lg:px-9">
-						{testimonials.map((testimonial) => (
+						{data?.testimony_data?.map((testimonial, i) => (
 							<div
-								key={testimonial.id}
+								key={i}
 								className="shadow-card-primary box-border h-[326px] w-[250px] flex-shrink-0 rounded-md bg-white px-6 py-6 lg:w-[370px]"
 							>
 								<div className="flex items-end justify-between">
 									<div className="mb-2 flex">
-										{[...Array(testimonial.rating)].map((_, index) => (
+										{[...Array(testimonial.star)].map((_, index) => (
 											<StarsIcon key={index} />
 										))}
 									</div>

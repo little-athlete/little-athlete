@@ -1,4 +1,11 @@
-const AddsBannerSection = () => {
+'use client'
+import { ILandingPage } from '@/db/firestore/interfaces/landing'
+
+interface Props {
+	data: ILandingPage
+}
+
+const AddsBannerSection = ({ data }: Props) => {
 	return (
 		<div className="bg-white pb-16 pt-24">
 			<div className="container mx-auto px-6">
@@ -8,14 +15,23 @@ const AddsBannerSection = () => {
 							<div className="my-12 pl-4 pr-4 lg:w-[70%] lg:pl-12">
 								<div className="">
 									<p className="text-xl font-bold text-white lg:text-[2rem]">
-										Mom, Dad, what are you waiting for?
+										{data?.banner_title}
 									</p>
 									<p className="mt-1 text-sm text-white lg:text-xl">
-										Join us for one month free trial
+										{data?.banner_desc}
 									</p>
 								</div>
-								<button className="mt-6 flex items-center rounded-full border-2 border-border bg-white px-6 py-2 text-base font-semibold text-black">
-									Start Free Trial
+								<button
+									onClick={() =>
+										window.open(
+											data?.banner_button_url,
+											'_blank',
+											'noopener,noreferrer'
+										)
+									}
+									className="mt-6 flex items-center rounded-full border-2 border-border bg-white px-6 py-2 text-base font-semibold text-black"
+								>
+									{data?.banner_button_text}
 								</button>
 							</div>
 						</div>
