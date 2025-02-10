@@ -92,7 +92,7 @@ const OurProgramSection: React.FC<ProgramDataType> = ({ data }) => {
 		),
 	}
 
-	const sportData = data?.programs_data?.map((item, i) => {
+	const sportData = data?.programs_data?.map((item) => {
 		return {
 			icon: iconMap[item.name as keyof typeof iconMap] || null,
 			name: item.name,
