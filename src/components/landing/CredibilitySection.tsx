@@ -1,28 +1,24 @@
 'use client'
 
-interface CredibilityItem {
-	value: string | number
-	label: string
-}
+import { ILandingPage } from '@/db/firestore/interfaces/landing'
 
 interface CredibilitySectionProps {
-	data: CredibilityItem[]
+	dataContent: ILandingPage
 }
 
-const CredibilitySection: React.FC<CredibilitySectionProps> = ({ data }) => {
+const CredibilitySection: React.FC<CredibilitySectionProps> = ({ dataContent }) => {
 	return (
 		<section id="credibility" className="scroll-mt-24 bg-yellow-400 py-12 md:py-24">
 			<div className="container mx-auto px-6 lg:text-center">
 				<h2 className="mb-4 text-2xl font-bold text-black lg:text-[2.625rem]">
-					Our Credibility
+					{dataContent?.credibility_title}
 				</h2>
 				<p className="mb-8 text-sm text-black lg:mb-12 lg:text-base">
-					For almost 2 years, we have grown so fast, delivering high-quality programs for
-					future athletes and satisfied parents.
+					{dataContent?.credibility_desc}
 				</p>
 
 				<div className="grid grid-cols-2 gap-6 md:grid-cols-5">
-					{data.map((el, i) => (
+					{dataContent?.credibility_data?.map((el, i) => (
 						<div
 							data-aos="fade-right"
 							data-aos-delay={i * 200}

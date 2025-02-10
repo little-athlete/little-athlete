@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import WhastappIcon from '../Icon/IconWa'
 import Link from 'next/link'
+import { ILandingPage } from '@/db/firestore/interfaces/landing'
 
 export const useSectionObserver = (sections: string[]) => {
 	const [activeSection, setActiveSection] = useState<string | null>(null)
@@ -42,9 +43,11 @@ export const useSectionObserver = (sections: string[]) => {
 	return activeSection
 }
 
-const Header = () => {
+type HeaderProps = {
+	data: ILandingPage
+}
+const Header = ({ data }: HeaderProps) => {
 	const [isScrolled, setIsScrolled] = useState<boolean>(false)
-
 	const activeSection = useSectionObserver(['credibility', 'about', 'programs', 'testimonials'])
 
 	useEffect(() => {
@@ -62,8 +65,6 @@ const Header = () => {
 		{ href: '#programs', label: 'Programs' },
 		{ href: '#testimonials', label: 'Testimonials' },
 	]
-
-	console.log({ activeSection })
 
 	return (
 		<header
@@ -105,7 +106,10 @@ const Header = () => {
 				</nav> */}
 
 				<div className="md:order-3">
-					<button className="flex items-center rounded-full border-2 border-border bg-white px-4 py-1 text-base font-semibold text-black lg:px-6 lg:py-2">
+					<button
+						onClick={() => window.open(data?.wa_url, '_blank', 'noopener,noreferrer')}
+						className="flex items-center rounded-full border-2 border-border bg-white px-4 py-1 text-base font-semibold text-black lg:px-6 lg:py-2"
+					>
 						<WhastappIcon className="mt-[1px] h-[16px] w-[16px] lg:h-[32px] lg:w-[32px]" />
 						<span className="text-sm lg:text-base xl:ml-2">Chat with us</span>
 					</button>

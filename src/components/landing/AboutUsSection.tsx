@@ -1,5 +1,6 @@
 'use client'
 
+import { ILandingPage } from '@/db/firestore/interfaces/landing'
 import Image from 'next/image'
 
 interface CoachingData {
@@ -11,9 +12,10 @@ interface CoachingData {
 
 interface AboutSectionProps {
 	coachingData: CoachingData[]
+	data: ILandingPage
 }
 
-const AboutSection: React.FC<AboutSectionProps> = ({ coachingData }) => {
+const AboutSection: React.FC<AboutSectionProps> = ({ data }) => {
 	return (
 		<div className="bg-secondary py-12 text-white lg:py-16">
 			<div className="container mx-auto px-6">
@@ -21,23 +23,16 @@ const AboutSection: React.FC<AboutSectionProps> = ({ coachingData }) => {
 					ABOUT US
 				</p>
 				<h2 className="mb-12 text-2xl font-bold text-white lg:text-center lg:text-[42px]">
-					Our Passion, Your Advantage
+					{data?.about_title}
 				</h2>
 
 				<div className="flex flex-wrap items-center justify-center gap-12 lg:gap-20">
 					<div className="w-full lg:w-[524px]">
-						<h3 className="mb-8 text-[2rem] font-extrabold">
-							Internationally Certified Coaches
-						</h3>
-						<p className="mb-4 text-base lg:mb-14">
-							We believe in providing the best for our young learners. Our
-							internationally certified coaches bring a wealth of knowledge and
-							experience to every session, creating a supportive and enriching
-							environment for children to thrive.
-						</p>
+						<h3 className="mb-8 text-[2rem] font-extrabold">{data?.about_subtitle}</h3>
+						<p className="mb-4 text-base lg:mb-14">{data?.about_desc}</p>
 
 						<ul className="space-y-4 overflow-hidden lg:overflow-visible">
-							{coachingData.map((item, index) => (
+							{data?.about_data.map((item, index) => (
 								<li
 									data-aos="fade-up-right"
 									data-aos-delay={index * 200}
@@ -45,17 +40,17 @@ const AboutSection: React.FC<AboutSectionProps> = ({ coachingData }) => {
 									className={`flex w-full items-center gap-8 rounded-2xl bg-card-001 px-6 py-4 lg:w-[427px]`}
 								>
 									<Image
-										src={item.imageSrc}
+										src={item.image_url as string}
 										width={48}
 										height={48}
-										alt={item.altText}
+										alt={item.alt_text as string}
 										className="h-[30px] w-[30px] lg:h-[48px] lg:w-[48px]"
 									/>
 									<div>
 										<p className="text-sm font-bold lg:text-lg">
 											{item.country}
 										</p>
-										<p className="text-sm lg:text-lg">{item.description}</p>
+										<p className="text-sm lg:text-lg">{item.desc}</p>
 									</div>
 								</li>
 							))}
@@ -69,10 +64,12 @@ const AboutSection: React.FC<AboutSectionProps> = ({ coachingData }) => {
 								data-aos="fade-down-right"
 								data-aos-delay={600}
 							>
-								<img
-									src="/people.png"
+								<Image
+									src={data?.about_coach_images[0]}
 									alt="Coach 1"
 									className="mb-4 w-[250px] rounded-2xl object-cover lg:h-[285px]"
+									width={250}
+									height={285}
 								/>
 							</div>
 							<div
@@ -80,10 +77,12 @@ const AboutSection: React.FC<AboutSectionProps> = ({ coachingData }) => {
 								data-aos="fade-up-right"
 								data-aos-delay={600}
 							>
-								<img
-									src="/people2.png"
+								<Image
+									src={data?.about_coach_images[1]}
 									alt="Coach 2"
 									className="w-[250px] rounded-2xl object-cover lg:h-[285px]"
+									width={250}
+									height={285}
 								/>
 							</div>
 						</div>
@@ -93,10 +92,12 @@ const AboutSection: React.FC<AboutSectionProps> = ({ coachingData }) => {
 								data-aos="fade-down-left"
 								data-aos-delay={600}
 							>
-								<img
-									src="/people3.png"
+								<Image
+									src={data?.about_coach_images[2]}
 									alt="Coach 3"
 									className="mt-16 w-[250px] rounded-2xl object-cover lg:mt-28 lg:h-[285px]"
+									width={250}
+									height={285}
 								/>
 							</div>
 							<div
@@ -104,10 +105,12 @@ const AboutSection: React.FC<AboutSectionProps> = ({ coachingData }) => {
 								data-aos="fade-up-left"
 								data-aos-delay={600}
 							>
-								<img
-									src="/people4.png"
+								<Image
+									src={data?.about_coach_images[3]}
 									alt="Coach 4"
 									className="mt-4 w-[250px] rounded-2xl object-cover lg:h-[285px]"
+									width={250}
+									height={285}
 								/>
 							</div>
 						</div>

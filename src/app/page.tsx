@@ -19,30 +19,14 @@ import OurProgramSection from '@/components/landing/OurProgram'
 import RunningTextSection from '@/components/landing/RunningTextSection'
 import SemiPrivateSection from '@/components/landing/SemiPrivateSection'
 import TestimonialSection from '@/components/landing/TestimonialSection'
+import { ILandingPage } from '@/db/firestore/interfaces/landing'
+import { getContentData } from '@/db/firestore/landing_page'
+import Image from 'next/image'
 
-export default function Home() {
-	const dataC = [
-		{
-			value: 500,
-			label: 'Future Athletes Registered',
-		},
-		{
-			value: 10,
-			label: 'Internationally Certified Coaches',
-		},
-		{
-			value: 7,
-			label: 'Sessions per Day',
-		},
-		{
-			value: 4,
-			label: 'Sports Categories',
-		},
-		{
-			value: 2,
-			label: 'Locations',
-		},
-	]
+export default async function Home() {
+	const contentData: ILandingPage = await getContentData()
+
+	console.log(contentData)
 
 	const coachingData = [
 		{
@@ -68,39 +52,6 @@ export default function Home() {
 			imageSrc: '/indonesia.png',
 			altText: 'american flag',
 			description: 'PERBASI',
-		},
-	]
-
-	const trainingData = [
-		{
-			id: 1,
-			imageSrc: '/logo.png',
-			altText: 'logo',
-			title: 'Preschoolers',
-			description: '(3-5 y.o)',
-			rotation: '-rotate-12',
-			position: 'relative top-52 -right-10 z-10 backdrop-blur-sm',
-			opacity: 'opacity-0',
-		},
-		{
-			id: 2,
-			imageSrc: '/logo-basket.png',
-			altText: 'logo',
-			title: 'Basketball Training',
-			description: '(6-12 y.o)',
-			rotation: '',
-			position: 'top-10 left-0 backdrop-blur-none',
-			opacity: 'opacity-50 ',
-		},
-		{
-			id: 3,
-			imageSrc: '/logo-karate.png',
-			altText: 'logo',
-			title: 'Karate Training',
-			description: '(6-12 y.o)',
-			rotation: 'rotate-12',
-			position: 'relative top-52  z-10 backdrop-blur-xl',
-			opacity: 'opacity-50',
 		},
 	]
 
@@ -148,9 +99,12 @@ export default function Home() {
 			imageSrc: '/program_3.png',
 			component: (
 				<div className="relative">
-					<img
+					<Image
 						src="/Blob 3.png"
 						className="absolute right-2 top-0 h-[90%] w-[90%] lg:right-0 lg:top-10 lg:h-[501px] lg:w-[669px]"
+						width={500}
+						height={669}
+						alt="blob"
 					/>
 					<MaskingImage3Icon
 						src={'/program_3.png'}
@@ -216,15 +170,15 @@ export default function Home() {
 
 	return (
 		<main>
-			<Header />
-			<HeroSection />
-			<CredibilitySection data={dataC} />
+			<Header data={contentData} />
+			<HeroSection data={contentData} />
+			<CredibilitySection dataContent={contentData} />
 			<section id="about" className="min-h-screen scroll-mt-24">
-				<AboutSection coachingData={coachingData} />
-				<FacilitiesSection />
-				<AgesSection trainingData={trainingData} />
-				<SemiPrivateSection />
-				<BannerSection />
+				<AboutSection coachingData={coachingData} data={contentData} />
+				<FacilitiesSection data={contentData} />
+				<AgesSection data={contentData} />
+				<SemiPrivateSection data={contentData} />
+				<BannerSection data={contentData} />
 			</section>
 			<section id="programs" className="scroll-mt-12">
 				<OurProgramSection sportsData={sportsData} />
