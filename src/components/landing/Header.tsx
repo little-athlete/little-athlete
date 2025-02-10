@@ -3,8 +3,9 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import WhastappIcon from '../Icon/IconWa'
+import Link from 'next/link'
 
-export const useSectionObserver = (sections: string[], heroSectionId: string) => {
+export const useSectionObserver = (sections: string[]) => {
 	const [activeSection, setActiveSection] = useState<string | null>(null)
 
 	useEffect(() => {
@@ -44,10 +45,7 @@ export const useSectionObserver = (sections: string[], heroSectionId: string) =>
 const Header = () => {
 	const [isScrolled, setIsScrolled] = useState<boolean>(false)
 
-	const activeSection = useSectionObserver(
-		['credibility', 'about', 'programs', 'testimonials'],
-		'hero'
-	)
+	const activeSection = useSectionObserver(['credibility', 'about', 'programs', 'testimonials'])
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -83,15 +81,28 @@ const Header = () => {
 				</div>
 				<nav className="order-last mt-4 flex w-full justify-between md:order-2 md:flex lg:mt-0 lg:w-auto lg:space-x-14">
 					{navLinks.map((link, index) => (
-						<a
+						<Link
 							key={index}
 							href={link.href}
 							className={`text-xs font-medium ${activeSection === link.href ? 'text-secondary' : 'text-black'} hover:text-blue-700 lg:text-base`}
 						>
 							{link.label}
-						</a>
+						</Link>
 					))}
 				</nav>
+				{/* <nav className="order-last mt-4 flex w-full justify-between md:order-2 md:flex lg:mt-0 lg:w-auto lg:space-x-14">
+					{navLinks.map((link, index) => (
+						<Link
+							key={index}
+							href={link.href}
+							className={`text-xs font-medium ${
+								activeSection === link.href ? 'text-secondary' : 'text-black'
+							} hover:text-blue-700 focus:outline-none focus:ring-0 active:text-inherit lg:text-base`}
+						>
+							{link.label}
+						</Link>
+					))}
+				</nav> */}
 
 				<div className="md:order-3">
 					<button className="flex items-center rounded-full border-2 border-border bg-white px-4 py-1 text-base font-semibold text-black lg:px-6 lg:py-2">

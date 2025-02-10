@@ -1,7 +1,5 @@
 'use client'
 
-import Image from 'next/image'
-
 const HeroSection = () => {
 	return (
 		<section id="hero" className="relative mt-20 min-h-full bg-white">

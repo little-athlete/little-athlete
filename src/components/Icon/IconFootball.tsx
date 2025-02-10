@@ -11,7 +11,6 @@ interface FootballIconProps {
 const FootballIcon: React.FC<FootballIconProps> = ({
 	width = 63,
 	height = 63,
-	color = '#FC8A00',
 	className = '',
 	style = {},
 	...props

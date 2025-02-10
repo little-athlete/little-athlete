@@ -11,7 +11,6 @@ interface IconDirectionProps {
 const IconDirection: React.FC<IconDirectionProps> = ({
 	width = 25,
 	height = 25,
-	color = '#000',
 	className = '',
 	style = {},
 	...props

@@ -11,7 +11,6 @@ interface WhastappIconProps {
 const WhastappIcon: React.FC<WhastappIconProps> = ({
 	width = 32,
 	height = 32,
-	color = '#000',
 	className = '',
 	style = {},
 	...props

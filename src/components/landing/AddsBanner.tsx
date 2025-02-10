@@ -1,5 +1,3 @@
-import React from 'react'
-
 const AddsBannerSection = () => {
 	return (
 		<div className="bg-white pb-16 pt-24">

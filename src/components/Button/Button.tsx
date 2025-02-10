@@ -63,7 +63,7 @@ const Button: React.FC<ButtonProps> = ({
 			case ButtonVariant.Primary:
 				return `bg-button ${{ disabled: 'hover:bg-black active:bg-gray-700' }}` // Primary style
 			case ButtonVariant.Secondary:
-				return 'bg-white hover:bg-gray-200 active:bg-gray-300 border border-button' // Secondary style
+				return 'bg-white hover:bg-gray-200 active:bg-gray-300 border border-button text-black' // Secondary style
 			case ButtonVariant.Outline:
 				return 'border border-white bg-transparent hover:bg-gray-100 active:bg-gray-200' // Outline style
 			case ButtonVariant.Destructive:

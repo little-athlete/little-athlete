@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import React from 'react'
 
 interface ProgramDataType {
@@ -8,6 +7,7 @@ interface ProgramDataType {
 		imageSrc: string
 		alt: string
 		reverse?: boolean
+		component: React.ReactNode
 	}[]
 }
 
@@ -26,24 +26,18 @@ const OurProgramSection: React.FC<ProgramDataType> = ({ sportsData }) => {
 					{sportsData.map((sport, index) => (
 						<div
 							key={index}
-							className={`flex flex-wrap items-center justify-center gap-1 lg:flex-nowrap lg:gap-12 ${
+							className={`mt-8 flex flex-wrap items-center justify-center gap-4 lg:flex-nowrap lg:gap-12 ${
 								sport.reverse ? 'lg:flex-row-reverse' : ''
 							}`}
 						>
-							<div data-aos="fade-right" data-aos-delay={index * 300}>
+							<div data-aos="fade-right" data-aos-delay={index * 200}>
 								<div className="mt-12 flex justify-center">{sport.icon}</div>
 								<p className="mt-2 text-[2rem] font-extrabold text-c-blue-200 lg:mt-4 lg:text-4xl">
 									{sport.name}
 								</p>
 							</div>
 							<div data-aos="fade-left" data-aos-delay={index * 300}>
-								<Image
-									src={sport.imageSrc}
-									width={700}
-									height={600}
-									alt={sport.alt}
-									className="w-full lg:h-[600px] lg:w-[700px]"
-								/>
+								<div>{sport.component}</div>
 							</div>
 						</div>
 					))}
