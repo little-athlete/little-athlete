@@ -131,7 +131,6 @@ const Input: React.FC<InputProps> = ({
 								key={option.value}
 								value={option.value}
 								disabled={option.disabled}
-								selected={option.disabled}
 							>
 								{option.label}
 							</option>

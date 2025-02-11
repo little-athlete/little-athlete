@@ -45,7 +45,7 @@ const itemsOptions = Object.values(Section).map((item) => ({
 }))
 
 const LandingPage = () => {
-	const [selectedSection, setSelectedSection] = useState(Section.Placeholder)
+	const [selectedSection, setSelectedSection] = useState(Section.About)
 	const [contentData, setContentData] = useState<ILandingPage>()
 	const [loading, setLoading] = useState(false)
 
@@ -136,7 +136,7 @@ const LandingPage = () => {
 			<Input
 				type={InputType.Select}
 				options={itemsOptions}
-				value={selectedSection}
+				value={selectedSection || ''}
 				onChange={(e) => setSelectedSection(e.target.value)}
 			/>
 

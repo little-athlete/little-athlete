@@ -15,7 +15,7 @@ const SemiPrivateSection = ({ data }: SemiSectionType) => {
 						<Image
 							src={data?.semi_private_image_url}
 							alt="Class"
-							className="h-full w-[700px] object-fill lg:h-[600px]"
+							className="h-full w-[700px] object-fill lg:mr-20 lg:h-[600px]"
 							width={700}
 							height={600}
 						/>

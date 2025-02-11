@@ -33,20 +33,20 @@ const AboutForm = ({ contentData, setContentData }: LandingContentProps) => {
 		<Box flex flexDirection={BoxDirection.Col} className={'mt-8 gap-4'}>
 			<Input
 				label={'About Title'}
-				value={contentData?.about_title}
+				value={contentData?.about_title || ''}
 				onChange={(e) => setContentData('about_title', e.target.value)}
 			/>
 
 			<Input
 				label={'About Subtitle'}
-				value={contentData?.about_subtitle}
+				value={contentData?.about_subtitle || ''}
 				onChange={(e) => setContentData('about_subtitle', e.target.value)}
 			/>
 
 			<Input
 				type={InputType.Textarea}
 				label={'About Description'}
-				value={contentData?.about_desc}
+				value={contentData?.about_desc || ''}
 				onChange={(e) => setContentData('about_desc', e.target.value)}
 			/>
 

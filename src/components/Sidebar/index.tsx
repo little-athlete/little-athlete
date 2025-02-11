@@ -3,10 +3,6 @@ import Link from 'next/link'
 
 const items = [
 	{
-		title: 'Home',
-		link: '/admin/home',
-	},
-	{
 		title: 'Landing Page',
 		link: '/admin/home/landing-page',
 	},
