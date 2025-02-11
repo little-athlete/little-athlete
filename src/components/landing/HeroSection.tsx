@@ -7,7 +7,6 @@ type HeroProps = {
 }
 
 const HeroSection = ({ data }: HeroProps) => {
-	console.log({ data })
 	return (
 		<section id="hero" className="relative mt-20 min-h-full bg-white">
 			<div

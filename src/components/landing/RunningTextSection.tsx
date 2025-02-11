@@ -7,7 +7,6 @@ interface Props {
 	data: ILandingPage
 }
 const RunningTextSection = ({ data }: Props) => {
-	console.log(data)
 	return (
 		<div className="bg-primary py-3">
 			<Marquee>
