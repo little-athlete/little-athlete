@@ -7,7 +7,7 @@ import 'aos/dist/aos.css'
 const AOSProvider = () => {
 	useEffect(() => {
 		AOS.init({
-			duration: 2000, // Durasi animasi
+			duration: 1000, // Durasi animasi
 			offset: 150, // Mulai animasi setelah scroll 50px
 			once: true,
 		})

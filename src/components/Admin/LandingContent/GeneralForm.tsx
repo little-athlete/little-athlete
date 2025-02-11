@@ -14,7 +14,7 @@ const GeneralForm = ({ contentData, setContentData }: LandingContentProps) => {
 	 * wa_url
 	 */
 	const onChangeRunningText = (newValue: string, index?: number) => {
-		onChangeArrayItem(contentData, setContentData, 'about_coach_images', newValue, index)
+		onChangeArrayItem(contentData, setContentData, 'running_text', newValue, index)
 	}
 	return (
 		<Box flex flexDirection={BoxDirection.Col} className={'mt-8 gap-4'}>

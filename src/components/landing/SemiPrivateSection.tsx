@@ -20,7 +20,7 @@ const SemiPrivateSection = ({ data }: SemiSectionType) => {
 							height={600}
 						/>
 					</div>
-					<div className="order-1 mx-auto flex w-full items-center justify-center px-4 pb-14 pt-20 lg:order-2 lg:max-w-[600px] lg:pt-0">
+					<div className="order-1 flex w-full items-center justify-center px-4 pb-14 pt-20 lg:order-2 lg:max-w-[600px] lg:pt-0">
 						<div>
 							<h3 className="mx-auto mb-4 text-[32px] font-bold text-black lg:w-3/4">
 								{data?.semi_private_title}
