@@ -17,6 +17,7 @@ import { getContentData } from '@/db/firestore/landing_page'
 export default async function Home() {
 	const contentData: ILandingPage = await getContentData()
 
+	console.log({ contentData })
 	return (
 		<main>
 			<Header data={contentData} />
@@ -39,3 +40,5 @@ export default async function Home() {
 		</main>
 	)
 }
+
+export const revalidate = 0

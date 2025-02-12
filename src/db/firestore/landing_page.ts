@@ -10,5 +10,5 @@ export async function getContentData() {
 }
 
 export async function saveContentData(data: ILandingPage) {
-	await updateDoc(PathFirestoreLandingPage,PathIdDocFirestoreLandingPage,data)
+	await updateDoc(PathFirestoreLandingPage, PathIdDocFirestoreLandingPage, data)
 }
