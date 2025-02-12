@@ -11,11 +11,11 @@ const SemiPrivateSection = ({ data }: SemiSectionType) => {
 		<div className="bg-white">
 			<div className="mx-auto">
 				<div className="flex w-full flex-wrap lg:flex-nowrap">
-					<div className="order-2 bg-white lg:order-1 lg:min-w-[700px]">
+					<div className="order-2 bg-white lg:order-1 lg:min-w-[680px]">
 						<Image
 							src={data?.semi_private_image_url}
 							alt="Class"
-							className="h-full w-[700px] object-fill lg:mr-20 lg:h-[600px]"
+							className="h-full w-[680px] object-fill lg:h-[580px]"
 							width={700}
 							height={600}
 						/>

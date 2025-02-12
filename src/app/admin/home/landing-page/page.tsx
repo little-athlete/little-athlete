@@ -20,6 +20,7 @@ import TestimonyForm from '@/components/Admin/LandingContent/TestimonyForm'
 import { ILandingPage } from '@/db/firestore/interfaces/landing'
 import { FuncSetContent } from '@/utils/stateUtils'
 import Button, { ButtonVariant } from '@/components/Button/Button'
+import toast, { Toaster } from 'react-hot-toast'
 
 const Section = {
 	Placeholder: 'Select Section',
@@ -54,6 +55,16 @@ const LandingPage = () => {
 		setContentData(data)
 	}, [])
 
+	const notify = () =>
+		toast.success('Success Update', {
+			style: {
+				border: '1px solid #FFDE31',
+				padding: '16px',
+				color: '#ffff',
+				background: '#0366FF',
+			},
+		})
+
 	useEffect(() => {
 		if (!contentData?.id) {
 			fetchContentData()
@@ -69,6 +80,7 @@ const LandingPage = () => {
 		await saveContentData(contentData as ILandingPage)
 		setLoading(false)
 		console.log('Success')
+		notify()
 	}
 
 	const renderSection = () => {
@@ -152,6 +164,7 @@ const LandingPage = () => {
 					containerClassName={'self-end bg-blue-500 hover:bg-blue-700'}
 				/>
 			)}
+			<Toaster />
 		</div>
 	)
 }
