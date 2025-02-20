@@ -29,68 +29,135 @@ const OurProgramSection: React.FC<ProgramDataType> = ({ data }) => {
 		Tennis: true,
 	}
 
-	const maskingMap: Record<string, JSX.Element> = {
-		Basketball: (
-			<div className="relative">
-				<Image
-					width={474}
-					height={685}
-					alt="image"
-					src="/Blob 1.png"
-					className="absolute -bottom-1 right-2 h-[90%] w-[90%] lg:bottom-2 lg:right-8 lg:h-[474px] lg:w-[685px]"
-				/>
-				<MaskingImage1Icon
-					src="/program_1.png"
-					className="h-full w-full lg:h-[615px] lg:w-[770px]"
-				/>
-			</div>
-		),
-		Football: (
-			<div className="relative">
-				<Image
-					width={515}
-					height={689}
-					alt="image"
-					src="/Blob 2.png"
-					className="absolute -bottom-1 right-2 h-[90%] w-[90%] rotate-12 lg:bottom-2 lg:right-8 lg:h-[515px] lg:w-[689px]"
-				/>
-				<MaskingImage2Icon
-					src="/program_2.png"
-					className="h-full w-full lg:h-[615px] lg:w-[770px]"
-				/>
-			</div>
-		),
-		Baseball: (
-			<div className="relative">
-				<Image
-					width={500}
-					height={669}
-					alt="blob"
-					src="/Blob 3.png"
-					className="absolute right-2 top-0 h-[90%] w-[90%] lg:right-0 lg:top-10 lg:h-[501px] lg:w-[669px]"
-				/>
-				<MaskingImage3Icon
-					src="/program_3.png"
-					className="h-full w-full lg:h-[615px] lg:w-[770px]"
-				/>
-			</div>
-		),
-		Tennis: (
-			<div className="relative">
-				<Image
-					width={490}
-					height={680}
-					alt="blob"
-					src="/Blob 4.png"
-					className="absolute right-2 top-8 h-[80%] w-[90%] -rotate-3 lg:right-[40px] lg:top-14 lg:h-[490px] lg:w-[680px]"
-				/>
-				<MaskingImage4Icon
-					src="/program_4.png"
-					className="h-full w-full lg:h-[615px] lg:w-[770px]"
-				/>
-			</div>
-		),
+	const getMaskingComponent = (name: string, imageUrl: string): JSX.Element | null => {
+		const maskingComponents: Record<string, JSX.Element> = {
+			Basketball: (
+				<div className="relative">
+					<Image
+						width={474}
+						height={685}
+						alt="image"
+						src="/Blob 1.png"
+						className="absolute -bottom-1 right-2 h-[90%] w-[90%] lg:bottom-2 lg:right-8 lg:h-[474px] lg:w-[685px]"
+					/>
+					<MaskingImage1Icon
+						src={imageUrl}
+						className="h-full w-full lg:h-[615px] lg:w-[770px]"
+					/>
+				</div>
+			),
+			Football: (
+				<div className="relative">
+					<Image
+						width={515}
+						height={689}
+						alt="image"
+						src="/Blob 2.png"
+						className="absolute -bottom-1 right-2 h-[90%] w-[90%] rotate-12 lg:bottom-2 lg:right-8 lg:h-[515px] lg:w-[689px]"
+					/>
+					<MaskingImage2Icon
+						src={imageUrl}
+						className="h-full w-full lg:h-[615px] lg:w-[770px]"
+					/>
+				</div>
+			),
+			Baseball: (
+				<div className="relative">
+					<Image
+						width={500}
+						height={669}
+						alt="blob"
+						src="/Blob 3.png"
+						className="absolute right-2 top-0 h-[90%] w-[90%] lg:right-0 lg:top-10 lg:h-[501px] lg:w-[669px]"
+					/>
+					<MaskingImage3Icon
+						src={imageUrl}
+						className="h-full w-full lg:h-[615px] lg:w-[770px]"
+					/>
+				</div>
+			),
+			Tennis: (
+				<div className="relative">
+					<Image
+						width={490}
+						height={680}
+						alt="blob"
+						src="/Blob 4.png"
+						className="absolute right-2 top-8 h-[80%] w-[90%] -rotate-3 lg:right-[40px] lg:top-14 lg:h-[490px] lg:w-[680px]"
+					/>
+					<MaskingImage4Icon
+						src={imageUrl}
+						className="h-full w-full lg:h-[615px] lg:w-[770px]"
+					/>
+				</div>
+			),
+		}
+
+		return maskingComponents[name] || null
 	}
+
+	// const maskingMap: Record<string, JSX.Element> = {
+	// 	Basketball: (
+	// 		<div className="relative">
+	// 			<Image
+	// 				width={474}
+	// 				height={685}
+	// 				alt="image"
+	// 				src="/Blob 1.png"
+	// 				className="absolute -bottom-1 right-2 h-[90%] w-[90%] lg:bottom-2 lg:right-8 lg:h-[474px] lg:w-[685px]"
+	// 			/>
+	// 			<MaskingImage1Icon
+	// 				src="/program_1.png"
+	// 				className="h-full w-full lg:h-[615px] lg:w-[770px]"
+	// 			/>
+	// 		</div>
+	// 	),
+	// 	Football: (
+	// 		<div className="relative">
+	// 			<Image
+	// 				width={515}
+	// 				height={689}
+	// 				alt="image"
+	// 				src="/Blob 2.png"
+	// 				className="absolute -bottom-1 right-2 h-[90%] w-[90%] rotate-12 lg:bottom-2 lg:right-8 lg:h-[515px] lg:w-[689px]"
+	// 			/>
+	// 			<MaskingImage2Icon
+	// 				src="/program_2.png"
+	// 				className="h-full w-full lg:h-[615px] lg:w-[770px]"
+	// 			/>
+	// 		</div>
+	// 	),
+	// 	Baseball: (
+	// 		<div className="relative">
+	// 			<Image
+	// 				width={500}
+	// 				height={669}
+	// 				alt="blob"
+	// 				src="/Blob 3.png"
+	// 				className="absolute right-2 top-0 h-[90%] w-[90%] lg:right-0 lg:top-10 lg:h-[501px] lg:w-[669px]"
+	// 			/>
+	// 			<MaskingImage3Icon
+	// 				src="/program_3.png"
+	// 				className="h-full w-full lg:h-[615px] lg:w-[770px]"
+	// 			/>
+	// 		</div>
+	// 	),
+	// 	Tennis: (
+	// 		<div className="relative">
+	// 			<Image
+	// 				width={490}
+	// 				height={680}
+	// 				alt="blob"
+	// 				src="/Blob 4.png"
+	// 				className="absolute right-2 top-8 h-[80%] w-[90%] -rotate-3 lg:right-[40px] lg:top-14 lg:h-[490px] lg:w-[680px]"
+	// 			/>
+	// 			<MaskingImage4Icon
+	// 				src="/program_4.png"
+	// 				className="h-full w-full lg:h-[615px] lg:w-[770px]"
+	// 			/>
+	// 		</div>
+	// 	),
+	// }
 
 	const sportData = data?.programs_data?.map((item) => {
 		return {
@@ -98,7 +165,7 @@ const OurProgramSection: React.FC<ProgramDataType> = ({ data }) => {
 			name: item.name,
 			image_url: item.image_url,
 			alt: item.alt_text,
-			component: maskingMap[item.name as keyof typeof maskingMap] || null,
+			component: getMaskingComponent(item.name as string, item.image_url as string),
 			reverse: reverse[item.name as keyof typeof reverse] || false,
 		}
 	})
