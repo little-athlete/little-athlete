@@ -23,14 +23,17 @@ export default async function Home() {
 			<Header data={contentData} />
 			<HeroSection data={contentData} />
 			<CredibilitySection dataContent={contentData} />
-			<section id="about" className="min-h-screen scroll-mt-24">
+			<section
+				id={contentData?.sections[1]?.key?.replace('#', '')}
+				className="min-h-screen scroll-mt-24"
+			>
 				<AboutSection data={contentData} />
 				<FacilitiesSection data={contentData} />
 				<AgesSection data={contentData} />
 				<SemiPrivateSection data={contentData} />
 				<BannerSection data={contentData} />
 			</section>
-			<section id="programs" className="scroll-mt-12">
+			<section id={contentData?.sections[2]?.key?.replace('#', '')} className="scroll-mt-12">
 				<OurProgramSection data={contentData} />
 				<RunningTextSection data={contentData} />
 				<AddsBannerSection data={contentData} />

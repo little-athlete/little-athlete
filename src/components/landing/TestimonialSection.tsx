@@ -18,7 +18,7 @@ const TestimonialSection: React.FC<TestimonialPropsType> = ({ data }) => {
 		slides: { perView: 4, spacing: 15 },
 	})
 	return (
-		<section className="bg-white pb-32 lg:pt-16" id="testimonials">
+		<section className="bg-white pb-32 lg:pt-16" id={data?.sections[3]?.key?.replace('#', '')}>
 			<div className="mx-auto px-6">
 				<p className="mb-6 bg-gradient-to-r from-[#635AD9] to-[#219BE4] bg-clip-text text-sm font-bold text-transparent lg:mb-8 lg:text-center lg:text-base">
 					TESTIMONIAL

@@ -21,6 +21,7 @@ import { ILandingPage } from '@/db/firestore/interfaces/landing'
 import { FuncSetContent } from '@/utils/stateUtils'
 import Button, { ButtonVariant } from '@/components/Button/Button'
 import toast, { Toaster } from 'react-hot-toast'
+import HeaderNavbarForm from '@/components/Admin/LandingContent/HeaderNavbarForm'
 
 const Section = {
 	Placeholder: 'Select Section',
@@ -37,6 +38,7 @@ const Section = {
 	SemiPrivate: 'Semi Private Section',
 	SocialMedia: 'Social Media Section',
 	Testimony: 'Testimony Section',
+	HeaderNavbarSection: 'Header Navbar Section',
 }
 
 const itemsOptions = Object.values(Section).map((item) => ({
@@ -135,6 +137,13 @@ const LandingPage = () => {
 			case Section.Testimony:
 				return (
 					<TestimonyForm contentData={contentData} setContentData={onChangeContentData} />
+				)
+			case Section.HeaderNavbarSection:
+				return (
+					<HeaderNavbarForm
+						contentData={contentData}
+						setContentData={onChangeContentData}
+					/>
 				)
 		}
 	}

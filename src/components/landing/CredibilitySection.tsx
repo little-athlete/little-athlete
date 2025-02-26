@@ -8,7 +8,10 @@ interface CredibilitySectionProps {
 
 const CredibilitySection: React.FC<CredibilitySectionProps> = ({ dataContent }) => {
 	return (
-		<section id="credibility" className="scroll-mt-24 bg-yellow-400 py-12 md:py-24">
+		<section
+			id={dataContent?.sections[0]?.key?.replace('#', '')}
+			className="scroll-mt-24 bg-yellow-400 py-12 md:py-24"
+		>
 			<div className="container mx-auto px-6 lg:text-center">
 				<h2 className="mb-4 text-2xl font-bold text-black lg:text-[2.625rem]">
 					{dataContent?.credibility_title}

@@ -38,6 +38,7 @@ export interface ILandingPage {
 	testimony_data: ITestimonyData[]
 	testimony_title: string
 	wa_url: string
+	sections: ISectionLink[]
 }
 
 export interface ITestimonyData {
@@ -82,4 +83,9 @@ export interface IAgesBadge {
 	image_url?: string
 	subtitle?: string
 	title?: string
+}
+
+export interface ISectionLink {
+	key?: string
+	label?: string
 }

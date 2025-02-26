@@ -33,9 +33,9 @@ const OurProgramSection: React.FC<ProgramDataType> = ({ data }) => {
 				<Image
 					src={'/basketball.png'}
 					alt="program-basketball"
-					className="h-[32px] w-[32px] lg:h-[63px] lg:w-[63px]"
-					width={32}
-					height={32}
+					className="h-[40px] w-[40px] lg:h-[63px] lg:w-[63px]"
+					width={63}
+					height={63}
 				/>
 			),
 		},
@@ -60,9 +60,9 @@ const OurProgramSection: React.FC<ProgramDataType> = ({ data }) => {
 				<Image
 					src={'/soccer.png'}
 					alt="program-basketball"
-					className="h-[32px] w-[32px] lg:h-[63px] lg:w-[63px]"
-					width={32}
-					height={32}
+					className="h-[40px] w-[40px] lg:h-[63px] lg:w-[63px]"
+					width={63}
+					height={63}
 				/>
 			),
 		},
@@ -87,9 +87,9 @@ const OurProgramSection: React.FC<ProgramDataType> = ({ data }) => {
 				<Image
 					src={'/baseball-program.png'}
 					alt="program-basketball"
-					className="h-[32px] w-[32px] lg:h-[63px] lg:w-[63px]"
-					width={32}
-					height={32}
+					className="h-[40px] w-[40px] lg:h-[63px] lg:w-[63px]"
+					width={120}
+					height={120}
 				/>
 			),
 		},
@@ -114,9 +114,9 @@ const OurProgramSection: React.FC<ProgramDataType> = ({ data }) => {
 				<Image
 					src={'/tennis.png'}
 					alt="program-basketball"
-					className="h-[32px] w-[32px] lg:h-[63px] lg:w-[63px]"
-					width={32}
-					height={32}
+					className="h-[40px] w-[40px] lg:h-[63px] lg:w-[63px]"
+					width={120}
+					height={120}
 				/>
 			),
 		},

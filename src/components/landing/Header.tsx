@@ -50,6 +50,10 @@ const Header = ({ data }: HeaderProps) => {
 	const [isScrolled, setIsScrolled] = useState<boolean>(false)
 	const activeSection = useSectionObserver(['credibility', 'about', 'programs', 'testimonials'])
 
+	const onClickLogo = () => {
+		window.scrollTo({ top: 0, behavior: 'smooth' })
+	}
+
 	useEffect(() => {
 		const handleScroll = () => {
 			setIsScrolled(window.scrollY > 50) // Jika scroll lebih dari 50px
@@ -59,21 +63,19 @@ const Header = ({ data }: HeaderProps) => {
 		return () => window.removeEventListener('scroll', handleScroll)
 	}, [])
 
-	const navLinks = [
-		{ href: '#credibility', label: 'Our Credibility' },
-		{ href: '#about', label: 'About Us' },
-		{ href: '#programs', label: 'Programs' },
-		{ href: '#testimonials', label: 'Testimonials' },
-	]
-
 	return (
 		<header
 			className={`fixed left-0 top-0 z-50 w-full py-2 ${isScrolled ? 'bg-white shadow-md' : 'bg-primary'} transition-all duration-300`}
 		>
 			<div className="container mx-auto flex flex-wrap items-center justify-between px-6 xl:justify-center xl:gap-[180px]">
-				<div className="logo md:order-1">
+				<div
+					className="logo cursor-pointer md:order-1"
+					onClick={() => {
+						onClickLogo()
+					}}
+				>
 					<Image
-						src="/logo-header.png"
+						src={data?.logo_url}
 						alt="Logo"
 						className="h-[43px] w-[43px] lg:h-[80px] lg:w-[80px]"
 						width={89}
@@ -81,11 +83,11 @@ const Header = ({ data }: HeaderProps) => {
 					/>
 				</div>
 				<nav className="order-last mt-4 flex w-full justify-between md:order-2 md:flex lg:mt-0 lg:w-auto lg:space-x-14">
-					{navLinks.map((link, index) => (
+					{data?.sections.map((link, index) => (
 						<Link
 							key={index}
-							href={link.href}
-							className={`text-xs font-medium ${activeSection === link.href ? 'text-secondary' : 'text-black'} hover:text-blue-700 lg:text-base`}
+							href={link.key as string}
+							className={`text-xs font-medium ${activeSection === link.key ? 'text-secondary' : 'text-black'} hover:text-blue-700 lg:text-base`}
 						>
 							{link.label}
 						</Link>
