@@ -1,43 +1,41 @@
 {
-	"name": "little-athlete",
-	"version": "0.1.0",
-	"private": true,
-	"scripts": {
-		"dev": "next dev --turbopack",
-		"build": "next build",
-		"start": "next build && next start -p 8080",
-		"lint": "next lint",
-		"format": "prettier --write ."
-	},
-	"dependencies": {
-		"aos": "^2.3.4",
-		"clsx": "^2.1.1",
-		"firebase": "^11.2.0",
-		"firebase-admin": "^13.1.0",
-		"keen-slider": "^6.8.6",
-		"lucide-react": "^0.475.0",
-		"next": "15.1.5",
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0",
-		"react-fast-marquee": "^1.6.5",
-		"react-hot-toast": "^2.5.1",
-		"swiper": "^11.2.2",
-		"tailwind-merge": "^2.6.0"
-	},
-	"devDependencies": {
-		"@eslint/eslintrc": "^3",
-		"@types/aos": "^3.0.7",
-		"@types/node": "^20",
-		"@types/react": "^19",
-		"@types/react-dom": "^19",
-		"eslint": "^9",
-		"eslint-config-next": "15.1.5",
-		"eslint-config-prettier": "^10.0.1",
-		"eslint-plugin-prettier": "^5.2.3",
-		"postcss": "^8",
-		"prettier": "^3.4.2",
-		"prettier-plugin-tailwindcss": "^0.6.10",
-		"tailwindcss": "^3.4.1",
-		"typescript": "^5"
-	}
+  "name": "little-athlete",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -p 8080",
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "seed": "tsx scripts/seed.ts"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "firebase": "^12.14.0",
+    "firebase-admin": "^13.10.0",
+    "lucide-react": "^1.17.0",
+    "next": "15.5.19",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-hot-toast": "^2.5.1",
+    "tailwind-merge": "^2.6.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4.3.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "dotenv": "^16.4.7",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.19",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.10",
+    "tailwindcss": "^4.3.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5"
+  }
 }
