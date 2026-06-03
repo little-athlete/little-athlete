@@ -1,4 +1,12 @@
-import { addDoc, collection, doc, getDoc, setDoc } from 'firebase/firestore'
+import {
+	addDoc,
+	collection,
+	deleteDoc as fbDeleteDoc,
+	doc,
+	getDoc,
+	getDocs,
+	setDoc,
+} from 'firebase/firestore'
 import { firestore } from '@/config/firebase'
 
 export async function insertDoc(collName: string, data: object) {
@@ -21,4 +29,13 @@ export async function getOneDocById(collName: string, id: string) {
 	}
 
 	return null
+}
+
+export async function getAllDocs(collName: string) {
+	const snap = await getDocs(collection(firestore, collName))
+	return snap.docs.map((d) => ({ ...d.data(), id: d.id }))
+}
+
+export async function deleteDocById(collName: string, id: string) {
+	await fbDeleteDoc(doc(firestore, collName, id))
 }
