@@ -1,22 +1,16 @@
 import { redirect } from 'next/navigation'
-import Typography from '@/components/Typography/Typography'
-import LoginForm from '@/components/Admin/LoginForm'
 import { validateUser } from '@/utils/authValidation'
 
 export default async function LoginPage() {
-	const { isVerifyUser } = await validateUser()
-	if (isVerifyUser) {
-		return redirect('/admin/home')
-	}
+  const { isVerifyUser } = await validateUser()
+  if (isVerifyUser) redirect('/admin')
 
-	return (
-		<main className="flex min-h-screen w-full items-center justify-center bg-secondary">
-			<div className="flex w-full max-w-screen-xl flex-col items-center justify-center gap-14 p-6">
-				<LoginForm />
-				<Typography className="!text-white">
-					Copyright © 2024 little Athelete. All rights reserved.
-				</Typography>
-			</div>
-		</main>
-	)
+  return (
+    <main className="flex min-h-screen items-center justify-center bg-secondary">
+      <div className="rounded-lg bg-white p-8 shadow">
+        <h1 className="text-xl font-bold">Admin Login — placeholder</h1>
+        <p className="text-muted-foreground text-sm">Form login dibangun saat modul auth.</p>
+      </div>
+    </main>
+  )
 }
