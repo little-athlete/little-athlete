@@ -15,7 +15,7 @@ Lalu lampirkan PNG section Figma untuk modul yang dikerjakan. Claude akan: baca 
 | Tahap | Plan | Status |
 |-------|------|--------|
 | Brainstorm & desain | (spec ini) | ✅ selesai |
-| Fase 0 — Fondasi | `plans/2026-06-03-v2-fase-0-foundation.md` | ⬜ belum dieksekusi |
+| Fase 0 — Fondasi | `plans/2026-06-03-v2-fase-0-foundation.md` | ✅ selesai (2026-06-03, branch `revamp`) |
 | Modul Landing | (plan terpisah, dibuat saat Figma section siap) | ⬜ belum |
 | Modul About Us | (plan terpisah) | ⬜ belum |
 | Modul Program + Detail | (plan terpisah) | ⬜ belum |
