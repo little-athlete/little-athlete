@@ -4,6 +4,8 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* TODO(token): isi --primary v2 dari design-reference/tokens.md saat tersedia */
+
 @theme inline {
     --font-heading: var(--font-sans);
     --font-sans: var(--font-sans);
