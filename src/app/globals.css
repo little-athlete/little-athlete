@@ -1,94 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-html {
-	scroll-behavior: smooth;
-}
+@import 'tailwindcss';
 
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
-	--font-sora: 'Sora', sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: ##FFDE31;
-		--foreground: #ededed;
-	}
+  --background: #ffffff;
+  --foreground: #0a0a0a;
 }
 
 body {
-	color: var(--foreground);
-	background: #fff;
-	font-family: var(--font-sora);
+  background: var(--background);
+  color: var(--foreground);
 }
-
-.linear-border {
-	border: 1px solid;
-	border-image: linear-gradient(115.43deg, rgba(231, 231, 231, 0) 24.08%, #C6C6C6 66.11%);
-	border-image-slice: 40;
-	position: relative;
-	padding: 16px;
-	border-radius: 5px; 
-	outline: 4px solid transparent;
-	outline-offset: -4px; /* Menarik outline ke dalam */
-	box-shadow: 0 0 0 4px linear-gradient(to right, #3acfd5, #3a4ed5);
-	backdrop-filter: blur(16px)
-
-}
-
-.linear-border::before {
-	content: '';
-	position: absolute;
-	inset: 0;
-	padding: 4px; /* Ketebalan border */
-	border-radius: 12px; /* Radius untuk border */
-	border-image: linear-gradient(115.43deg, rgba(231, 231, 231, 0) 24.08%, #C6C6C6 66.11%);
-	mask-composite: exclude;
-	z-index: 1;
-}
-
-.shadow-card-primary {
-	box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.1);
-}
-
-.bg-linear-primary {
-	/* Mobile default */
-	background: linear-gradient(180deg, rgba(3, 102, 255, 0) 30.05%, #0366FF 60.95%);
-  }
-  
-  @media (min-width: 768px) {
-	/* Tablet and larger screens */
-	.bg-linear-primary {
-	  background: linear-gradient(90deg, rgba(3, 102, 255, 0) 1.05%, #0366FF 44.95%);
-	}
-  }
-
-
-  .marquee {
-	display: flex;
-	animation: marquee 10s linear infinite;
-  }
-  
-  @keyframes marquee {
-	from {
-	  transform: translateX(100%);
-	}
-	to {
-	  transform: translateX(-100%);
-	}
-  }
-
-  .bg-linear-secondary {
-		/* Mobile default */
-		background: linear-gradient(180deg, rgba(2, 61, 153, 0) 20.52%, rgba(3, 101, 252, 0.970501) 50.04%, #0366FF 30.2%);
-	}
-	
-	@media (min-width: 768px) {
-	  .bg-linear-secondary {
-		background: linear-gradient(270deg, rgba(2, 61, 153, 0) 2.52%, rgba(3, 101, 252, 0.970501) 30.04%, #0366FF 80.2%);
-	}
-}
-
