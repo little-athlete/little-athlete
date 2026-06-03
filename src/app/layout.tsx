@@ -1,8 +1,11 @@
 import { cert, getApps, initializeApp } from 'firebase-admin/app'
 import type { Metadata } from 'next'
-import { Sora, Plus_Jakarta_Sans } from 'next/font/google'
+import { Sora, Plus_Jakarta_Sans, Geist } from 'next/font/google'
 import './globals.css'
 import AOSProvider from '@/utils/AOSProvider'
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const sora = Sora({
 	variable: '--font-sora',
@@ -34,7 +37,7 @@ if (getApps().length == 0) {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en">
+		<html lang="en" className={cn("font-sans", geist.variable)}>
 			<head>
 				<meta name="robots" content="index, follow" />
 				<meta name="author" content="Little Athlete Team" />
