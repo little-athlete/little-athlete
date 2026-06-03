@@ -30,6 +30,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" content="#FFD700" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="canonical" href="https://littleathlete.com" />
+        {/* TODO(modul Settings/Location): isi logo, sameAs (social), address (LocalBusiness) dari Firestore */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'Little Athlete',
+              url: 'https://littleathlete.com',
+            }),
+          }}
+        />
       </head>
       <body className={`${sora.variable} ${plusJakartaSans.variable} antialiased`}>
         {children}
