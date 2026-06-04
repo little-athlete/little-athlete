@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { validateUser } from '@/utils/authValidation'
 import { Toaster } from '@/components/ui/sonner'
+import { LogoutButton } from '@/components/admin/LogoutButton'
 
 const NAV = [
 	{ href: '/admin', label: 'Dashboard' },
@@ -20,7 +21,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
 
 	return (
 		<div className="flex min-h-screen">
-			<aside className="w-60 border-r p-4">
+			<aside className="flex w-60 flex-col border-r p-4">
 				<div className="mb-4 font-bold">Little Athlete CMS</div>
 				<nav className="flex flex-col gap-1">
 					{NAV.map((item) => (
@@ -33,6 +34,9 @@ export default async function AdminLayout({ children }: { children: React.ReactN
 						</Link>
 					))}
 				</nav>
+				<div className="mt-auto pt-4">
+					<LogoutButton />
+				</div>
 			</aside>
 			<div className="flex-1 p-6">{children}</div>
 			<Toaster />
