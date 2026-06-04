@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { RepeatableList } from '@/components/admin/RepeatableList'
+import { ImageUpload } from '@/components/admin/ImageUpload'
 import { saveLandingPage } from '@/actions/landingActions'
 import type {
 	ILandingPage,
@@ -96,7 +97,7 @@ export function LandingForm({ initial }: { initial: ILandingPage | null }) {
 				<Field label="Title accent (orange)" value={data.hero_title_accent} onChange={(v) => set({ hero_title_accent: v })} />
 				<Field label="Button label" value={data.hero_button_label} onChange={(v) => set({ hero_button_label: v })} />
 				<Field label="Button URL" value={data.hero_button_url} onChange={(v) => set({ hero_button_url: v })} />
-				<Field label="Image URL" value={data.hero_image_url} onChange={(v) => set({ hero_image_url: v })} />
+				<ImageUpload label="Image (karakter 3D)" value={data.hero_image_url} onChange={(v) => set({ hero_image_url: v })} folder="landing" />
 			</Section>
 
 			<Section title="Image slider">
@@ -120,7 +121,7 @@ export function LandingForm({ initial }: { initial: ILandingPage | null }) {
 				<Field label="Primary button URL" value={data.story_primary_url} onChange={(v) => set({ story_primary_url: v })} />
 				<Field label="Secondary button label" value={data.story_secondary_label} onChange={(v) => set({ story_secondary_label: v })} />
 				<Field label="Secondary button URL" value={data.story_secondary_url} onChange={(v) => set({ story_secondary_url: v })} />
-				<Field label="Image URL" value={data.story_image_url} onChange={(v) => set({ story_image_url: v })} />
+				<ImageUpload label="Image (foto gym)" value={data.story_image_url} onChange={(v) => set({ story_image_url: v })} folder="landing" />
 			</Section>
 
 			<Section title="Programs">
@@ -136,7 +137,7 @@ export function LandingForm({ initial }: { initial: ILandingPage | null }) {
 						<>
 							<Input placeholder="Title" value={item.title} onChange={(e) => update({ title: e.target.value })} />
 							<Input placeholder="Age label" value={item.age_label} onChange={(e) => update({ age_label: e.target.value })} />
-							<Input placeholder="Image URL" value={item.image_url} onChange={(e) => update({ image_url: e.target.value })} />
+							<ImageUpload label="Image kartu" value={item.image_url} onChange={(v) => update({ image_url: v })} folder="landing" />
 						</>
 					)}
 				/>
@@ -145,7 +146,7 @@ export function LandingForm({ initial }: { initial: ILandingPage | null }) {
 			<Section title="Stats">
 				<Field label="Title" value={data.stats_title} onChange={(v) => set({ stats_title: v })} />
 				<Field label="Title accent (orange)" value={data.stats_title_accent} onChange={(v) => set({ stats_title_accent: v })} />
-				<Field label="Image URL" value={data.stats_image_url} onChange={(v) => set({ stats_image_url: v })} />
+				<ImageUpload label="Image (karakter 2 anak)" value={data.stats_image_url} onChange={(v) => set({ stats_image_url: v })} folder="landing" />
 				<RepeatableList<IStatItem>
 					label="Stat items"
 					items={data.stats_items}

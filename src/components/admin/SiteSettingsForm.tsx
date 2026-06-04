@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { RepeatableList } from '@/components/admin/RepeatableList'
+import { ImageUpload } from '@/components/admin/ImageUpload'
 import { saveSiteSettings } from '@/actions/settingsActions'
 import type { INavLink, ISiteSettings } from '@/db/firestore/interfaces/site_settings'
 
@@ -68,10 +69,7 @@ export function SiteSettingsForm({ initial }: { initial: ISiteSettings | null })
 
 	return (
 		<div className="max-w-2xl space-y-6">
-			<div className="grid gap-2">
-				<Label>Logo URL</Label>
-				<Input value={data.logo_url} onChange={(e) => set({ logo_url: e.target.value })} />
-			</div>
+			<ImageUpload label="Logo" value={data.logo_url} onChange={(v) => set({ logo_url: v })} folder="settings" />
 			<div className="grid gap-2">
 				<Label>Contact WhatsApp URL (header button)</Label>
 				<Input value={data.contact_wa_url} onChange={(e) => set({ contact_wa_url: e.target.value })} />
