@@ -1,17 +1,18 @@
 import '@/lib/firebase-admin'
 import type { Metadata } from 'next'
-import { Sora, Plus_Jakarta_Sans } from 'next/font/google'
+import { Parkinsans, Poppins } from 'next/font/google'
 import './globals.css'
 
-const sora = Sora({
-  variable: '--font-sora',
+const parkinsans = Parkinsans({
+  variable: '--font-parkinsans',
   subsets: ['latin'],
   display: 'swap',
 })
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: '--font-plus-jakarta-sans',
+const poppins = Poppins({
+  variable: '--font-poppins',
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
 })
 
@@ -27,7 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Little Athlete Team" />
-        <meta name="theme-color" content="#FFD700" />
+        <meta name="theme-color" content="#245BFF" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="canonical" href="https://littleathlete.com" />
         {/* TODO(modul Settings/Location): isi logo, sameAs (social), address (LocalBusiness) dari Firestore */}
@@ -43,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className={`${sora.variable} ${plusJakartaSans.variable} antialiased`}>
+      <body className={`${parkinsans.variable} ${poppins.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>
