@@ -18,7 +18,13 @@ export function RepeatableList<T>({
 	renderItem,
 }: RepeatableListProps<T>) {
 	const update = (index: number, patch: Partial<T>) => {
-		onChange(items.map((it, i) => (i === index ? { ...it, ...patch } : it)))
+		onChange(
+			items.map((it, i) => {
+				if (i !== index) return it
+				// Object items merge the patch; primitive items (e.g. string URLs) are replaced wholesale.
+				return typeof it === 'object' && it !== null ? { ...it, ...patch } : (patch as T)
+			}),
+		)
 	}
 	const remove = (index: number) => onChange(items.filter((_, i) => i !== index))
 

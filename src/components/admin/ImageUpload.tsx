@@ -22,8 +22,11 @@ export function ImageUpload({ label, value, onChange, folder = 'uploads' }: Imag
 
   const handleFile = async (file: File) => {
     setError('')
+    // Firebase restores the persisted session asynchronously, so currentUser can be
+    // null for a moment after a page load. Wait until auth has rehydrated before checking.
+    await auth.authStateReady()
     if (!auth.currentUser) {
-      setError('Sesi habis — refresh halaman lalu login ulang.')
+      setError('Sesi habis — login ulang.')
       return
     }
     setUploading(true)

@@ -94,11 +94,32 @@ export function LandingForm({ initial }: { initial: ILandingPage | null }) {
 	return (
 		<div className="max-w-3xl space-y-6">
 			<Section title="Hero">
-				<Field label="Title" value={data.hero_title} onChange={(v) => set({ hero_title: v })} />
-				<Field label="Title accent (orange)" value={data.hero_title_accent} onChange={(v) => set({ hero_title_accent: v })} />
-				<Field label="Button label" value={data.hero_button_label} onChange={(v) => set({ hero_button_label: v })} />
-				<Field label="Button URL" value={data.hero_button_url} onChange={(v) => set({ hero_button_url: v })} />
-				<ImageUpload label="Image (karakter 3D)" value={data.hero_image_url} onChange={(v) => set({ hero_image_url: v })} folder="landing" />
+				<Field
+					label="Title"
+					value={data.hero_title}
+					onChange={(v) => set({ hero_title: v })}
+				/>
+				<Field
+					label="Title accent (orange)"
+					value={data.hero_title_accent}
+					onChange={(v) => set({ hero_title_accent: v })}
+				/>
+				<Field
+					label="Button label"
+					value={data.hero_button_label}
+					onChange={(v) => set({ hero_button_label: v })}
+				/>
+				<Field
+					label="Button URL"
+					value={data.hero_button_url}
+					onChange={(v) => set({ hero_button_url: v })}
+				/>
+				<ImageUpload
+					label="Image (karakter 3D)"
+					value={data.hero_image_url}
+					onChange={(v) => set({ hero_image_url: v })}
+					folder="landing"
+				/>
 			</Section>
 
 			<Section title="Image slider">
@@ -108,27 +129,81 @@ export function LandingForm({ initial }: { initial: ILandingPage | null }) {
 					onChange={(v) => set({ slider_images: v })}
 					newItem={() => ''}
 					renderItem={(item, update) => (
-						<Input placeholder="/landing/slider-x.jpg" value={item} onChange={(e) => update(e.target.value as unknown as Partial<string>)} />
+						<ImageUpload
+							label="Slider image"
+							value={item}
+							onChange={(v) => update(v as unknown as Partial<string>)}
+							folder="landing"
+						/>
 					)}
 				/>
 			</Section>
 
 			<Section title="Our Story">
-				<Field label="Eyebrow" value={data.story_eyebrow} onChange={(v) => set({ story_eyebrow: v })} />
-				<Field label="Title (blue)" value={data.story_title} onChange={(v) => set({ story_title: v })} />
-				<Field label="Title accent (orange)" value={data.story_title_accent} onChange={(v) => set({ story_title_accent: v })} />
-				<Field label="Description" value={data.story_desc} onChange={(v) => set({ story_desc: v })} />
-				<Field label="Primary button label" value={data.story_primary_label} onChange={(v) => set({ story_primary_label: v })} />
-				<Field label="Primary button URL" value={data.story_primary_url} onChange={(v) => set({ story_primary_url: v })} />
-				<Field label="Secondary button label" value={data.story_secondary_label} onChange={(v) => set({ story_secondary_label: v })} />
-				<Field label="Secondary button URL" value={data.story_secondary_url} onChange={(v) => set({ story_secondary_url: v })} />
-				<ImageUpload label="Image (foto gym)" value={data.story_image_url} onChange={(v) => set({ story_image_url: v })} folder="landing" />
+				<Field
+					label="Eyebrow"
+					value={data.story_eyebrow}
+					onChange={(v) => set({ story_eyebrow: v })}
+				/>
+				<Field
+					label="Title (blue)"
+					value={data.story_title}
+					onChange={(v) => set({ story_title: v })}
+				/>
+				<Field
+					label="Title accent (orange)"
+					value={data.story_title_accent}
+					onChange={(v) => set({ story_title_accent: v })}
+				/>
+				<Field
+					label="Description"
+					value={data.story_desc}
+					onChange={(v) => set({ story_desc: v })}
+				/>
+				<Field
+					label="Primary button label"
+					value={data.story_primary_label}
+					onChange={(v) => set({ story_primary_label: v })}
+				/>
+				<Field
+					label="Primary button URL"
+					value={data.story_primary_url}
+					onChange={(v) => set({ story_primary_url: v })}
+				/>
+				<Field
+					label="Secondary button label"
+					value={data.story_secondary_label}
+					onChange={(v) => set({ story_secondary_label: v })}
+				/>
+				<Field
+					label="Secondary button URL"
+					value={data.story_secondary_url}
+					onChange={(v) => set({ story_secondary_url: v })}
+				/>
+				<ImageUpload
+					label="Image (foto gym)"
+					value={data.story_image_url}
+					onChange={(v) => set({ story_image_url: v })}
+					folder="landing"
+				/>
 			</Section>
 
 			<Section title="Programs">
-				<Field label="Title" value={data.programs_title} onChange={(v) => set({ programs_title: v })} />
-				<Field label="Title accent (orange)" value={data.programs_title_accent} onChange={(v) => set({ programs_title_accent: v })} />
-				<Field label="Description" value={data.programs_desc} onChange={(v) => set({ programs_desc: v })} />
+				<Field
+					label="Title"
+					value={data.programs_title}
+					onChange={(v) => set({ programs_title: v })}
+				/>
+				<Field
+					label="Title accent (orange)"
+					value={data.programs_title_accent}
+					onChange={(v) => set({ programs_title_accent: v })}
+				/>
+				<Field
+					label="Description"
+					value={data.programs_desc}
+					onChange={(v) => set({ programs_desc: v })}
+				/>
 				<RepeatableList<IProgramCard>
 					label="Program cards"
 					items={data.program_cards}
@@ -136,18 +211,44 @@ export function LandingForm({ initial }: { initial: ILandingPage | null }) {
 					newItem={() => ({ title: '', age_label: '', image_url: '' })}
 					renderItem={(item, update) => (
 						<>
-							<Input placeholder="Title" value={item.title} onChange={(e) => update({ title: e.target.value })} />
-							<Input placeholder="Age label" value={item.age_label} onChange={(e) => update({ age_label: e.target.value })} />
-							<ImageUpload label="Image kartu" value={item.image_url} onChange={(v) => update({ image_url: v })} folder="landing" />
+							<Input
+								placeholder="Title"
+								value={item.title}
+								onChange={(e) => update({ title: e.target.value })}
+							/>
+							<Input
+								placeholder="Age label"
+								value={item.age_label}
+								onChange={(e) => update({ age_label: e.target.value })}
+							/>
+							<ImageUpload
+								label="Image kartu"
+								value={item.image_url}
+								onChange={(v) => update({ image_url: v })}
+								folder="landing"
+							/>
 						</>
 					)}
 				/>
 			</Section>
 
 			<Section title="Stats">
-				<Field label="Title" value={data.stats_title} onChange={(v) => set({ stats_title: v })} />
-				<Field label="Title accent (orange)" value={data.stats_title_accent} onChange={(v) => set({ stats_title_accent: v })} />
-				<ImageUpload label="Image (karakter 2 anak)" value={data.stats_image_url} onChange={(v) => set({ stats_image_url: v })} folder="landing" />
+				<Field
+					label="Title"
+					value={data.stats_title}
+					onChange={(v) => set({ stats_title: v })}
+				/>
+				<Field
+					label="Title accent (orange)"
+					value={data.stats_title_accent}
+					onChange={(v) => set({ stats_title_accent: v })}
+				/>
+				<ImageUpload
+					label="Image (karakter 2 anak)"
+					value={data.stats_image_url}
+					onChange={(v) => set({ stats_image_url: v })}
+					folder="landing"
+				/>
 				<RepeatableList<IStatItem>
 					label="Stat items"
 					items={data.stats_items}
@@ -155,16 +256,32 @@ export function LandingForm({ initial }: { initial: ILandingPage | null }) {
 					newItem={() => ({ value: '', label: '' })}
 					renderItem={(item, update) => (
 						<>
-							<Input placeholder="Value (e.g. 4.000)" value={item.value} onChange={(e) => update({ value: e.target.value })} />
-							<Input placeholder="Label" value={item.label} onChange={(e) => update({ label: e.target.value })} />
+							<Input
+								placeholder="Value (e.g. 4.000)"
+								value={item.value}
+								onChange={(e) => update({ value: e.target.value })}
+							/>
+							<Input
+								placeholder="Label"
+								value={item.label}
+								onChange={(e) => update({ label: e.target.value })}
+							/>
 						</>
 					)}
 				/>
 			</Section>
 
 			<Section title="Testimonials">
-				<Field label="Eyebrow (small blue)" value={data.testimony_eyebrow} onChange={(v) => set({ testimony_eyebrow: v })} />
-				<Field label="Section title" value={data.testimony_title} onChange={(v) => set({ testimony_title: v })} />
+				<Field
+					label="Eyebrow (small blue)"
+					value={data.testimony_eyebrow}
+					onChange={(v) => set({ testimony_eyebrow: v })}
+				/>
+				<Field
+					label="Section title"
+					value={data.testimony_title}
+					onChange={(v) => set({ testimony_title: v })}
+				/>
 				<RepeatableList<ITestimonial>
 					label="Testimonials"
 					items={data.testimonials}
@@ -172,19 +289,50 @@ export function LandingForm({ initial }: { initial: ILandingPage | null }) {
 					newItem={() => ({ quote: '', name: '', stars: 5 })}
 					renderItem={(item, update) => (
 						<>
-							<Input placeholder="Quote" value={item.quote} onChange={(e) => update({ quote: e.target.value })} />
-							<Input placeholder="Name" value={item.name} onChange={(e) => update({ name: e.target.value })} />
-							<Input type="number" min={1} max={5} placeholder="Stars" value={item.stars} onChange={(e) => update({ stars: Number(e.target.value) })} />
+							<Input
+								placeholder="Quote"
+								value={item.quote}
+								onChange={(e) => update({ quote: e.target.value })}
+							/>
+							<Input
+								placeholder="Name"
+								value={item.name}
+								onChange={(e) => update({ name: e.target.value })}
+							/>
+							<Input
+								type="number"
+								min={1}
+								max={5}
+								placeholder="Stars"
+								value={item.stars}
+								onChange={(e) => update({ stars: Number(e.target.value) })}
+							/>
 						</>
 					)}
 				/>
 			</Section>
 
 			<Section title="CTA banner">
-				<Field label="Title" value={data.cta_title} onChange={(v) => set({ cta_title: v })} />
-				<Field label="Description" value={data.cta_desc} onChange={(v) => set({ cta_desc: v })} />
-				<Field label="Button label" value={data.cta_button_label} onChange={(v) => set({ cta_button_label: v })} />
-				<Field label="Button URL" value={data.cta_button_url} onChange={(v) => set({ cta_button_url: v })} />
+				<Field
+					label="Title"
+					value={data.cta_title}
+					onChange={(v) => set({ cta_title: v })}
+				/>
+				<Field
+					label="Description"
+					value={data.cta_desc}
+					onChange={(v) => set({ cta_desc: v })}
+				/>
+				<Field
+					label="Button label"
+					value={data.cta_button_label}
+					onChange={(v) => set({ cta_button_label: v })}
+				/>
+				<Field
+					label="Button URL"
+					value={data.cta_button_url}
+					onChange={(v) => set({ cta_button_url: v })}
+				/>
 			</Section>
 
 			<Button onClick={onSave} disabled={isPending}>
