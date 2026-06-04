@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { validateUser } from '@/utils/authValidation'
+import { Toaster } from '@/components/ui/sonner'
 
 const NAV = [
   { href: '/admin', label: 'Dashboard' },
@@ -30,6 +31,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         </nav>
       </aside>
       <div className="flex-1 p-6">{children}</div>
+      <Toaster />
     </div>
   )
 }
