@@ -55,7 +55,8 @@ export interface ILandingPage {
 	stats_items: IStatItem[]
 
 	// Testimonials
-	testimony_title: string // "420+ Happy Parents"
+	testimony_eyebrow: string // "420+ Happy Parents" (small blue eyebrow)
+	testimony_title: string // "Don't just take our words"
 	testimonials: ITestimonial[]
 
 	// CTA banner

@@ -40,6 +40,7 @@ const EMPTY: ILandingPage = {
 	stats_title_accent: '',
 	stats_image_url: '',
 	stats_items: [],
+	testimony_eyebrow: '',
 	testimony_title: '',
 	testimonials: [],
 	cta_title: '',
@@ -162,6 +163,7 @@ export function LandingForm({ initial }: { initial: ILandingPage | null }) {
 			</Section>
 
 			<Section title="Testimonials">
+				<Field label="Eyebrow (small blue)" value={data.testimony_eyebrow} onChange={(v) => set({ testimony_eyebrow: v })} />
 				<Field label="Section title" value={data.testimony_title} onChange={(v) => set({ testimony_title: v })} />
 				<RepeatableList<ITestimonial>
 					label="Testimonials"

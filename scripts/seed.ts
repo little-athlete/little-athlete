@@ -90,7 +90,8 @@ const pageLanding: Omit<ILandingPage, 'id'> = {
     { value: '3', label: 'Dedicated locations' },
   ],
 
-  testimony_title: '420+ Happy Parents',
+  testimony_eyebrow: '420+ Happy Parents',
+  testimony_title: "Don't just take our words",
   testimonials: [
     { quote: 'Little Athlete has been incredible for our child. The coaches are patient and encouraging.', name: 'Jen** Wil***', stars: 5 },
     { quote: 'The semi private class are amazing! Our child gets the attention they need.', name: 'Dev** La***', stars: 5 },
