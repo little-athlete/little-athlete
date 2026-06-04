@@ -29,10 +29,10 @@ export function Testimonials({ data }: { data: ILandingPage }) {
 			<div className="mx-auto max-w-screen-xl px-6">
 				<div className="grid items-center gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-14">
 					{/* Decorative character image */}
-					{data.stats_image_url && (
+					{data.testimony_image_url && (
 						<div className="relative mx-auto hidden h-72 w-full max-w-sm md:block">
 							<Image
-								src={data.stats_image_url}
+								src={data.testimony_image_url}
 								alt="Little Athlete kids playing music"
 								fill
 								sizes="40vw"
@@ -49,7 +49,7 @@ export function Testimonials({ data }: { data: ILandingPage }) {
 							{data.testimony_title}
 						</h2>
 
-						<Carousel opts={{ align: 'start' }} className="mt-8">
+						<Carousel opts={{ align: 'start', loop: true }} className="mt-8">
 							<CarouselContent>
 								{items.map((t: ITestimonial, i) => (
 									<CarouselItem key={i} className="sm:basis-1/2">

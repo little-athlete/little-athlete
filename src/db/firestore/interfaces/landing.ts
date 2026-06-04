@@ -57,6 +57,7 @@ export interface ILandingPage {
 	// Testimonials
 	testimony_eyebrow: string // "420+ Happy Parents" (small blue eyebrow)
 	testimony_title: string // "Don't just take our words"
+	testimony_image_url: string // 2-kids playing music PNG
 	testimonials: ITestimonial[]
 
 	// CTA banner

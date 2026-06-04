@@ -42,6 +42,7 @@ const EMPTY: ILandingPage = {
 	stats_items: [],
 	testimony_eyebrow: '',
 	testimony_title: '',
+	testimony_image_url: '',
 	testimonials: [],
 	cta_title: '',
 	cta_desc: '',
@@ -281,6 +282,12 @@ export function LandingForm({ initial }: { initial: ILandingPage | null }) {
 					label="Section title"
 					value={data.testimony_title}
 					onChange={(v) => set({ testimony_title: v })}
+				/>
+				<ImageUpload
+					label="Image (karakter 2 anak main musik)"
+					value={data.testimony_image_url}
+					onChange={(v) => set({ testimony_image_url: v })}
+					folder="landing"
 				/>
 				<RepeatableList<ITestimonial>
 					label="Testimonials"
