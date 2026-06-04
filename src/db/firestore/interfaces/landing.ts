@@ -1,91 +1,66 @@
+// Landing page (singleton) — v2 data contract derived from Figma.
+// Highlight pattern: `*_accent` is a substring of its paired title, rendered in `text-brand-accent`.
+
+export interface IProgramCard {
+	title: string // "School Readiness Program"
+	age_label: string // "Toddler (1.5–3yo)"
+	image_url: string
+}
+
+export interface IStatItem {
+	value: string // "4.000"
+	label: string // "Little athlete registered"
+}
+
+export interface ITestimonial {
+	quote: string
+	name: string // "Jen** Wil***"
+	stars: number // 1–5
+}
+
 export interface ILandingPage {
-	about_coach_images: string[]
-	about_data: IAboutData[]
-	about_desc: string
-	about_subtitle: string
-	about_title: string
-	ads_title: string
-	ads_wa_url: string
-	ages_badges: IAgesBadge[]
-	ages_desc: string
-	ages_title: string
-	banner_button_text: string
-	banner_button_url: string
-	banner_desc: string
-	banner_title: string
-	credibility_data: ICredibilityData[]
-	credibility_desc: string
-	credibility_title: string
-	facility_desc: string
-	facility_image_url_1: string
-	facility_image_url_2: string
-	facility_title: string
-	hero_button_title: string
-	hero_button_url: string
-	hero_desc: string
-	hero_image_url: string
-	hero_title: string
 	id: string
-	locations: ILocation[]
-	logo_url: string
-	programs_data: IProgramsData[]
-	programs_title: string
-	running_text: string[]
-	semi_private_desc: string
-	semi_private_image_url: string
-	semi_private_title: string
-	social_media_data: ISocialMediaData[]
-	testimony_data: ITestimonyData[]
-	testimony_title: string
-	wa_url: string
-	sections: ISectionLink[]
-}
 
-export interface ITestimonyData {
-	name?: string
-	star?: number
-	text?: string
-}
+	// Hero
+	hero_title: string // "Helping your little ones grow through the power of"
+	hero_title_accent: string // "Sports & Music"
+	hero_button_label: string // "Enjoy the Free Trial"
+	hero_button_url: string
+	hero_image_url: string // 3-characters PNG
 
-export interface IAboutData {
-	country?: string
-	image_url?: string
-	alt_text?: string
-	desc?: string
-}
+	// Infinite image slider
+	slider_images: string[]
 
-export interface ILocation {
-	address?: string
-	title?: string
-	link_title?: string
-	link?: string
-}
+	// Our Story
+	story_eyebrow: string // "OUR STORY"
+	story_title: string // "The First Ever" (primary blue)
+	story_title_accent: string // "Semi Private & Sports Music School" (brand-accent)
+	story_desc: string
+	story_primary_label: string // "Book Free Trial"
+	story_primary_url: string
+	story_secondary_label: string // "Certifications"
+	story_secondary_url: string
+	story_image_url: string
 
-export interface IProgramsData {
-	alt_text?: string
-	name?: string
-	reverse?: boolean
-	image_url?: string
-}
+	// Programs
+	programs_title: string // "From Sports to Music for Kids 1–12yo"
+	programs_title_accent: string // "Sports to Music"
+	programs_desc: string
+	program_cards: IProgramCard[]
 
-export interface ISocialMediaData {
-	name?: string
-	url?: string
-	logo?: string
-}
+	// Stats
+	stats_title: string // "The trust that we earned"
+	stats_title_accent: string // "trust"
+	stats_image_url: string // 2-kids PNG
+	stats_items: IStatItem[]
 
-export interface ICredibilityData {
-	label?: string
-	value?: string
-}
+	// Testimonials
+	testimony_title: string // "420+ Happy Parents"
+	testimonials: ITestimonial[]
 
-export interface IAgesBadge {
-	image_url?: string
-	subtitle?: string
-	title?: string
-}
-
-export interface ISectionLink {
-	key?: string
-	label?: string
+	// CTA banner
+	cta_title: string // "Ready to join the Little Athlete family? 🌟"
+	cta_desc: string // "Start with a free trial class — no commitment needed."
+	cta_button_label: string // "Start Your Free Trial"
+	cta_button_url: string
 }
