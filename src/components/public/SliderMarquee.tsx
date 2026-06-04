@@ -15,14 +15,14 @@ export function SliderMarquee({ images }: { images: string[] }) {
 				{images.map((src, i) => (
 					<div
 						key={`${src}-${i}`}
-						className={`mx-3 ${TILTS[i % TILTS.length]}`}
+						className={`mx-4 ${TILTS[i % TILTS.length]}`}
 					>
 						<Image
 							src={src}
 							alt=""
-							width={320}
-							height={224}
-							className="h-44 w-64 rounded-2xl object-cover shadow-lg sm:h-52 sm:w-80"
+							width={358}
+							height={478}
+							className="h-[358px] w-[268px] rounded-2xl object-cover shadow-lg sm:h-[478px] sm:w-[358px]"
 						/>
 					</div>
 				))}

@@ -23,7 +23,7 @@ export function Hero({ data }: { data: ILandingPage }) {
 			</div>
 
 			<div className="relative mx-auto flex max-w-screen-xl flex-col items-center px-6 pt-16 text-center sm:pt-20">
-				<h1 className="mx-auto max-w-2xl text-3xl leading-tight font-bold text-foreground sm:text-4xl md:text-5xl">
+				<h1 className="mx-auto max-w-2xl text-3xl leading-tight font-bold text-primary sm:text-4xl md:text-[52px]">
 					{data.hero_title}{' '}
 					<span className="block text-brand-accent">{data.hero_title_accent}</span>
 				</h1>
@@ -42,7 +42,7 @@ export function Hero({ data }: { data: ILandingPage }) {
 						width={1000}
 						height={620}
 						priority
-						className="relative mt-8 h-auto w-full max-w-3xl object-contain"
+						className="relative mt-2 h-auto w-full max-w-3xl object-contain"
 					/>
 				)}
 			</div>

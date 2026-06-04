@@ -8,10 +8,7 @@ export function OurStory({ data }: { data: ILandingPage }) {
 			<div className="mx-auto grid max-w-screen-xl items-center gap-10 px-6 md:grid-cols-2 md:gap-14">
 				{/* Text column */}
 				<div>
-					<p className="text-xs font-semibold tracking-[0.2em] text-muted-foreground uppercase">
-						{data.story_eyebrow}
-					</p>
-					<h2 className="mt-4 text-3xl leading-tight font-bold sm:text-4xl md:text-5xl">
+					<h2 className="text-3xl leading-tight font-bold sm:text-4xl md:text-[42px]">
 						<span className="text-primary">{data.story_title}</span>
 						<br />
 						<span className="text-brand-accent">{data.story_title_accent}</span>

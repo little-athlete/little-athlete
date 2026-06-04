@@ -4,7 +4,7 @@ import type { ILandingPage } from '@/db/firestore/interfaces/landing'
 export function CtaBanner({ data }: { data: ILandingPage }) {
 	return (
 		<section className="bg-background px-6 py-16 sm:py-20">
-			<div className="relative mx-auto flex max-w-screen-xl flex-col items-start justify-between gap-6 overflow-hidden rounded-3xl bg-primary px-8 py-12 sm:px-12 md:flex-row md:items-center">
+			<div className="relative mx-auto flex max-w-screen-xl flex-col items-start justify-between gap-6 overflow-hidden rounded-3xl bg-primary bg-linear-to-br from-[#3b6dff] via-primary to-[#1740d6] px-8 py-12 sm:px-12 md:flex-row md:items-center">
 				{/* Decorative rings */}
 				<div
 					aria-hidden
@@ -16,7 +16,7 @@ export function CtaBanner({ data }: { data: ILandingPage }) {
 				/>
 
 				<div className="relative max-w-xl">
-					<h2 className="text-2xl font-bold text-primary-foreground sm:text-3xl md:text-4xl">
+					<h2 className="text-2xl font-bold text-primary-foreground sm:text-[32px]">
 						{data.cta_title}
 					</h2>
 					<p className="mt-3 text-sm text-primary-foreground/80 sm:text-base">
