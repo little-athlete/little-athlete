@@ -16,7 +16,8 @@ Lalu lampirkan PNG section Figma untuk modul yang dikerjakan. Claude akan: baca 
 |-------|------|--------|
 | Brainstorm & desain | (spec ini) | ✅ selesai |
 | Fase 0 — Fondasi | `plans/2026-06-03-v2-fase-0-foundation.md` | ✅ selesai (2026-06-03, branch `revamp`) |
-| Modul Landing | (plan terpisah, dibuat saat Figma section siap) | ⬜ belum |
+| Modul Landing — Plan 1 (data+admin+seed) | `plans/2026-06-04-landing-data-admin-seed.md` | ✅ selesai (2026-06-04) |
+| Modul Landing — Plan 2 (halaman publik) | (plan terpisah, berikutnya) | ⬜ belum |
 | Modul About Us | (plan terpisah) | ⬜ belum |
 | Modul Program + Detail | (plan terpisah) | ⬜ belum |
 | Modul Location | (plan terpisah) | ⬜ belum |
@@ -206,3 +207,4 @@ src/
 - **2026-06-03** — FINAL: workflow per-modul jadi **ADMIN-FIRST** dengan pivot "definisikan interface dari Figma" (langkah 3) + rekonsiliasi (langkah 7). **Role tidak dibuat**, tapi desain **role-ready** (guard terpusat). **Routing** disetujui (route groups `(public)`/`admin`, Bagian 9). Versi Next.js diputuskan di awal Fase 0. Desain v2 dianggap LENGKAP — siap masuk implementation plan.
 - **2026-06-03** — Design token: pendekatan **2-lapis** — infrastruktur token semantik (via shadcn CSS vars) dibuat di Fase 0, isi nilai inti yang diketahui, nilai diperhalus progresif per modul. Larang hex mentah. Daftar berjalan di `design-reference/tokens.md` (sudah dibuat). Primary berubah dari v1 (`#FFDE31`).
 - **2026-06-03** — Versi terkunci (cek npm): **Next 15.5.19** (bukan 16, demi safety App Hosting), **Tailwind v4.3** (CSS-first), shadcn CLI 4.x, firebase 12.14 / admin 13.10, **npm** (hapus yarn.lock). **Implementation plan Fase 0** ditulis: `docs/superpowers/plans/2026-06-03-v2-fase-0-foundation.md` (12 task). Modul konten = plan terpisah per modul.
+- **2026-06-04** — Mulai modul Landing. Token warna+font v2 terkunci (primary `#245BFF`, accent `#ED8F15`, surface-dark `#0F172A`, dst; font Parkinsans + Poppins) & di-port ke `globals.css`. Modul dipecah 2 plan: Plan 1 (data contract `ILandingPage`/`ISiteSettings` + server-db admin SDK + actions + seed + admin forms + header/footer wiring) selesai; Plan 2 = halaman publik pixel-perfect (slider via `react-fast-marquee`, testimoni via shadcn Carousel). Program cards & testimonials sementara di-denormalisasi ke `page_landing`.
