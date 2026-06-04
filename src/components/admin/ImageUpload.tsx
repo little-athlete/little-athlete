@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
-import { storage } from '@/config/firebase'
+import { storage, auth } from '@/config/firebase'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -22,6 +22,10 @@ export function ImageUpload({ label, value, onChange, folder = 'uploads' }: Imag
 
   const handleFile = async (file: File) => {
     setError('')
+    if (!auth.currentUser) {
+      setError('Sesi habis — refresh halaman lalu login ulang.')
+      return
+    }
     setUploading(true)
     try {
       const path = `${folder}/${Date.now()}-${file.name}`
