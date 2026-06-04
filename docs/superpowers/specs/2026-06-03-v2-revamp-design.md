@@ -17,7 +17,7 @@ Lalu lampirkan PNG section Figma untuk modul yang dikerjakan. Claude akan: baca 
 | Brainstorm & desain | (spec ini) | ✅ selesai |
 | Fase 0 — Fondasi | `plans/2026-06-03-v2-fase-0-foundation.md` | ✅ selesai (2026-06-03, branch `revamp`) |
 | Modul Landing — Plan 1 (data+admin+seed) | `plans/2026-06-04-landing-data-admin-seed.md` | ✅ selesai (2026-06-04) |
-| Modul Landing — Plan 2 (halaman publik) | (plan terpisah, berikutnya) | ⬜ belum |
+| Modul Landing — Plan 2 (halaman publik) | (komponen `src/components/public/`) | ✅ selesai (2026-06-04) |
 | Modul About Us | (plan terpisah) | ⬜ belum |
 | Modul Program + Detail | (plan terpisah) | ⬜ belum |
 | Modul Location | (plan terpisah) | ⬜ belum |
