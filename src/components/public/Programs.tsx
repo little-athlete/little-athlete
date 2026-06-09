@@ -5,7 +5,7 @@ import { Highlight } from './Highlight'
 export function Programs({ data }: { data: ILandingPage }) {
 	return (
 		<section className="bg-background py-16 sm:py-20">
-			<div className="mx-auto max-w-screen-xl px-6">
+			<div className="mx-auto max-w-7xl px-6">
 				<div className="mx-auto max-w-2xl text-center">
 					<h2 className="text-2xl font-bold text-primary sm:text-3xl md:text-4xl">
 						<Highlight text={data.programs_title} accent={data.programs_title_accent} />
@@ -19,7 +19,7 @@ export function Programs({ data }: { data: ILandingPage }) {
 					{(data.program_cards ?? []).map((card, i) => (
 						<article
 							key={`${card.title}-${i}`}
-							className="group relative mx-auto aspect-[401/715] w-full max-w-[401px] overflow-hidden rounded-3xl"
+							className="group relative mx-auto aspect-401/715 w-full max-w-100 overflow-hidden rounded-3xl"
 						>
 							{card.image_url && (
 								<Image
@@ -31,7 +31,7 @@ export function Programs({ data }: { data: ILandingPage }) {
 								/>
 							)}
 							{/* Bottom gradient for text legibility */}
-							<div className="absolute inset-0 bg-gradient-to-t from-surface-dark/90 via-surface-dark/20 to-transparent" />
+							<div className="absolute inset-0 bg-linear-to-t from-surface-dark/90 via-surface-dark/20 to-transparent" />
 							<div className="absolute inset-x-0 bottom-0 p-6 text-surface-dark-foreground">
 								<h3 className="text-[32px] leading-tight font-bold">{card.title}</h3>
 								<p className="mt-2 text-[20px] text-surface-dark-foreground/80">

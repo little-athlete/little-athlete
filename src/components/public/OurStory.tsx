@@ -5,7 +5,7 @@ import type { ILandingPage } from '@/db/firestore/interfaces/landing'
 export function OurStory({ data }: { data: ILandingPage }) {
 	return (
 		<section className="bg-section-muted py-16 sm:py-20">
-			<div className="mx-auto grid max-w-screen-xl items-center gap-10 px-6 md:grid-cols-2 md:gap-14">
+			<div className="mx-auto grid max-w-7xl items-center gap-10 px-6 md:grid-cols-2 md:gap-14">
 				{/* Text column */}
 				<div>
 					<h2 className="text-3xl leading-tight font-bold sm:text-4xl md:text-[42px]">
@@ -34,7 +34,7 @@ export function OurStory({ data }: { data: ILandingPage }) {
 
 				{/* Image column */}
 				{data.story_image_url && (
-					<div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl">
+					<div className="relative aspect-4/3 w-full overflow-hidden rounded-3xl">
 						<Image
 							src={data.story_image_url}
 							alt="Coaching session at Little Athlete"

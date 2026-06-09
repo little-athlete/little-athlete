@@ -25,9 +25,9 @@ export function Testimonials({ data }: { data: ILandingPage }) {
 	const items = data.testimonials ?? []
 
 	return (
-		<section className="bg-background py-16 sm:py-20">
-			<div className="mx-auto max-w-screen-xl px-6">
-				<div className="grid items-center gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-14">
+		<section className="overflow-x-clip bg-background py-16 sm:py-20">
+			<div className="mx-auto max-w-7xl px-6">
+				<div className="grid items-center gap-10 md:grid-cols-[0.8fr_minmax(0,1.2fr)] md:gap-14">
 					{/* Decorative character image */}
 					{data.testimony_image_url && (
 						<div className="relative mx-auto hidden h-72 w-full max-w-sm md:block">
@@ -49,7 +49,13 @@ export function Testimonials({ data }: { data: ILandingPage }) {
 							{data.testimony_title}
 						</h2>
 
-						<Carousel opts={{ align: 'start', loop: true }} className="mt-8">
+						{/* On wide screens the track bleeds to the right viewport edge:
+						   616 = screen-xl/2 (640) - px-6 (24), so the right edge always
+						   lands at 100vw. The section's overflow-x-clip trims it cleanly. */}
+						<Carousel
+							opts={{ align: 'start', loop: true }}
+							className="mt-8 xl:w-[calc(100%+50vw-616px)]"
+						>
 							<CarouselContent>
 								{items.map((t: ITestimonial, i) => (
 									<CarouselItem key={i} className="sm:basis-1/2">
