@@ -7,10 +7,10 @@ export function Programs({ data }: { data: ILandingPage }) {
 		<section className="bg-background py-16 sm:py-20">
 			<div className="mx-auto max-w-7xl px-6">
 				<div className="mx-auto max-w-2xl text-center">
-					<h2 className="text-2xl font-bold text-primary sm:text-3xl md:text-4xl">
+					<h2 className="text-primary text-2xl font-bold sm:text-3xl md:text-4xl">
 						<Highlight text={data.programs_title} accent={data.programs_title_accent} />
 					</h2>
-					<p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+					<p className="text-muted-foreground mt-4 text-sm leading-relaxed sm:text-base">
 						{data.programs_desc}
 					</p>
 				</div>
@@ -31,10 +31,12 @@ export function Programs({ data }: { data: ILandingPage }) {
 								/>
 							)}
 							{/* Bottom gradient for text legibility */}
-							<div className="absolute inset-0 bg-linear-to-t from-surface-dark/90 via-surface-dark/20 to-transparent" />
-							<div className="absolute inset-x-0 bottom-0 p-6 text-surface-dark-foreground">
-								<h3 className="text-[32px] leading-tight font-bold">{card.title}</h3>
-								<p className="mt-2 text-[20px] text-surface-dark-foreground/80">
+							<div className="from-surface-dark/90 via-surface-dark/20 absolute inset-0 bg-linear-to-t to-transparent" />
+							<div className="text-surface-dark-foreground absolute inset-x-0 bottom-0 p-6">
+								<h3 className="text-[32px] leading-tight font-bold">
+									{card.title}
+								</h3>
+								<p className="text-surface-dark-foreground/80 mt-2 text-[20px]">
 									{card.age_label}
 								</p>
 							</div>
