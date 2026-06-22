@@ -26,8 +26,17 @@ export function Testimonials({ data }: { data: ILandingPage }) {
 
 	return (
 		<section className="overflow-x-clip bg-background py-16 sm:py-20">
-			<div className="mx-auto max-w-7xl px-6">
-				<div className="grid items-center gap-10 md:grid-cols-[0.8fr_minmax(0,1.2fr)] md:gap-14">
+			<div className="mx-auto max-w-7xl px-6 text-center">
+				{/* Eyebrow + Title — centered at top */}
+				<p className="text-sm font-bold tracking-[0.2em] text-foreground">
+					{data.testimony_eyebrow}
+				</p>
+				<h2 className="mt-2 text-[42px] font-bold leading-[1.1] text-primary">
+					{data.testimony_title}
+				</h2>
+
+				{/* Image + Carousel grid below */}
+				<div className="mt-10 grid items-center gap-10 text-left md:grid-cols-[0.8fr_minmax(0,1.2fr)] md:gap-14">
 					{/* Decorative character image */}
 					{data.testimony_image_url && (
 						<div className="relative mx-auto hidden h-72 w-full max-w-sm md:block">
@@ -42,24 +51,14 @@ export function Testimonials({ data }: { data: ILandingPage }) {
 					)}
 
 					<div>
-						<p className="text-xs font-semibold tracking-[0.2em] text-primary uppercase">
-							{data.testimony_eyebrow}
-						</p>
-						<h2 className="mt-2 text-2xl font-bold sm:text-3xl md:text-4xl">
-							{data.testimony_title}
-						</h2>
-
-						{/* On wide screens the track bleeds to the right viewport edge:
-						   616 = screen-xl/2 (640) - px-6 (24), so the right edge always
-						   lands at 100vw. The section's overflow-x-clip trims it cleanly. */}
 						<Carousel
 							opts={{ align: 'start', loop: true }}
-							className="mt-8 xl:w-[calc(100%+50vw-616px)]"
+							className="xl:w-[calc(100%+50vw-616px)]"
 						>
 							<CarouselContent>
 								{items.map((t: ITestimonial, i) => (
 									<CarouselItem key={i} className="sm:basis-1/2">
-										<figure className="h-full rounded-2xl border border-border p-6">
+										<figure className="h-full rounded-2xl p-6">
 											<Stars count={t.stars} />
 											<blockquote className="mt-4 text-sm leading-relaxed text-foreground">
 												&ldquo;{t.quote}&rdquo;
